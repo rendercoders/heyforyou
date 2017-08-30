@@ -29,3 +29,7 @@ git reset --hard
 git pull
 chown www:www -R $DEPLOY_PATH
 ```
+* 给脚本执行权限
+```
+$ chmod +x post-receive
+```
