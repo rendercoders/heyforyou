@@ -1,7 +1,7 @@
 ---
 title: 阿里云Ubuntu安装Composer和中国镜像
 date: 2017-08-27 09:19:50
-tags:
+tags: [PHP, Composer]
 ---
 引用: Composer是PHP用来管理依赖（dependency）关系的工具。你可以在自己的项目中声明所依赖的外部工具库（libraries），Composer 会帮你安装这些依赖的库文件。
 PHP使用composer的地方越来越多, 接下来我就教大家如果在阿里云上面安装composer并且改为中国镜像。

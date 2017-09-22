@@ -1,7 +1,7 @@
 ---
 title: 'SSH链接报WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!的解决方法'
 date: 2017-09-14 11:15:22
-tags:
+tags: [GIT]
 ---
 今天心血来潮,把阿里云服务器云盘给重置了,导致使用SSH链接不上服务器。
 连接时报以下错误:
