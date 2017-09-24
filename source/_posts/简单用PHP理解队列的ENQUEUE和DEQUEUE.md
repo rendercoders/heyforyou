@@ -27,6 +27,9 @@ class Queue
 	// 设置上溢
 	public function set_overflow($overflow)
 	{
+		if (!$overflow) {
+			throw new Exception("缺少参数");
+		}
 		$this->overflow = $overflow;
 	}
 
@@ -41,8 +44,7 @@ class Queue
 	{
 		// 判断是否为数组
 		if (!is_array($data)) {
-			$this->data = 'Error, it\'s not an array';
-			return;
+			throw new Exception('参数类型错误，参数类型为数组');
 		}
 		$this->data = $data;
 	}
@@ -56,11 +58,13 @@ class Queue
 	// 入队
 	public function enqueue($value)
 	{
+		if (!$value) {
+			throw new Exception("缺少参数");
+		}
 		$array = $this->data;
 		// 判断是否上溢
 		if ($this->check_is_overflow()) {
-			$this->data = 'Error, overflow';
-			return;
+			throw new Exception('队列上溢');
 		}
 		$array = array_values($array);
 		$array[] = $value;
@@ -73,13 +77,11 @@ class Queue
 		$array = $this->data;
 		// 判断是否下溢
 		if ($this->check_is_underflow()) {
-			$this->data = 'Error, underflow';
-			return;
+			throw new Exception('队列下溢');
 		}
 		// 判断是否上溢
 		if ($this->check_is_overflow()) {
-			$this->data = 'Error, overflow';
-			return;
+			throw new Exception('队列上溢');
 		}
 		$array = array_values($array);
 		$head = 0;
@@ -97,7 +99,7 @@ class Queue
 	protected function check_is_underflow()
 	{
 		$array_count = count($this->data);
-		if ($array_count < 0) {
+		if ($array_count <= 0) {
 			return true;
 		}
 		return false;
@@ -108,7 +110,7 @@ class Queue
 	{
 		$array_count = count($this->data);
 		$overflow = $this->overflow;
-		if ($overflow && $array_count >= $overflow) {
+		if (isset($overflow) && $array_count >= $overflow) {
 			return true;
 		}
 		return false;
@@ -117,7 +119,7 @@ class Queue
 
 $queue = new Queue();
 // 设置上溢
-$queue->set_overflow(10);
+$queue->set_overflow(0);
 // 测试数据
 $testArr = ['123123', 'test', 'hello'];
 // 设置数据
@@ -127,7 +129,7 @@ $result = $queue->get_data();
 var_dump('测试数据', $result);
 
 // 入队一个
-$queue->enqueue(5);
+$queue->enqueue(234);
 $result = $queue->get_data();
 var_dump('入队一个', $result);
 
