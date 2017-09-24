@@ -39,6 +39,11 @@ class Queue
 	// 设置数据
 	public function set_data($data)
 	{
+		// 判断是否为数组
+		if (!is_array($data)) {
+			$this->data = 'Error, it\'s not an array';
+			return;
+		}
 		$this->data = $data;
 	}
 
@@ -52,11 +57,6 @@ class Queue
 	public function enqueue($value)
 	{
 		$array = $this->data;
-		// 判断是否为数组
-		if (!is_array($array)) {
-			$this->data = 'Error, it\'s not an array';
-			return;
-		}
 		// 判断是否上溢
 		if ($this->check_is_overflow()) {
 			$this->data = 'Error, overflow';
@@ -71,11 +71,6 @@ class Queue
 	public function dequeue()
 	{
 		$array = $this->data;
-		// 判断是否为数组
-		if (!is_array($array)) {
-			$this->data = 'Error, it\'s not an array';
-			return;
-		}
 		// 判断是否下溢
 		if ($this->check_is_underflow()) {
 			$this->data = 'Error, underflow';
@@ -91,6 +86,7 @@ class Queue
 		$array_count = count($array);
 		if ($head == $array_count) {
 			$this->data = $array;
+			return;
 		}
 		unset($array[$head]);
 		$array = array_values($array);
