@@ -119,7 +119,7 @@ class Queue
 
 $queue = new Queue();
 // 设置上溢
-$queue->set_overflow(0);
+$queue->set_overflow(10);
 // 测试数据
 $testArr = ['123123', 'test', 'hello'];
 // 设置数据
