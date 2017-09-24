@@ -63,13 +63,6 @@ class Queue
 			return;
 		}
 		$array = array_values($array);
-		// 队尾
-		$tail = $value;
-		if ($tail == count($array)) {
-			$tail = 0;
-		} else {
-			$tail = $tail + 1;
-		}
 		$array[] = $value;
 		$this->data = $array;
 	}
