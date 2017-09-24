@@ -31,7 +31,7 @@ class Queue
 	}
 
 	// 获取上溢
-	public function get_overflow()
+	protected function get_overflow()
 	{
 		return $this->overflow;
 	}
@@ -105,7 +105,7 @@ class Queue
 	}
 
 	// 判断是否下溢
-	public function check_is_underflow()
+	protected function check_is_underflow()
 	{
 		$array_count = count($this->data);
 		if ($array_count < 0) {
@@ -115,7 +115,7 @@ class Queue
 	}
 
 	// 判断是否上溢
-	public function check_is_overflow()
+	protected function check_is_overflow()
 	{
 		$array_count = count($this->data);
 		$overflow = $this->overflow;
