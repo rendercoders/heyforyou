@@ -18,6 +18,7 @@ tags: [数据结构, 栈]
 把另外一叠传单放到到我剩下的传单上面(后进)，于是我继续从上往下发(先出)。
 在最上面的就是先发出去的。
 
+### PHP代码实现
 ```
 <?php
 // 栈压入
@@ -84,5 +85,5 @@ var_dump('再弹出一个: ', $result);
 $result = stack_pop($result);
 var_dump('再弹出一个: ', $result);
 ```
-打印的结果为:
+### 打印的结果为
 ![栈结果打印](http://owq1mzbaq.bkt.clouddn.com/%E6%A0%88-stack.png)
