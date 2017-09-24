@@ -131,36 +131,33 @@ $queue = new Queue();
 $queue->set_overflow(10);
 // 测试数据
 $testArr = ['123123', 'test', 'hello'];
+// 设置数据
 $queue->set_data($testArr);
+// 获取数据
 $result = $queue->get_data();
 var_dump('测试数据', $result);
 
 // 入队一个
-$queue->set_data($result);
 $queue->enqueue(5);
 $result = $queue->get_data();
 var_dump('入队一个', $result);
 
 // 再入队一个
-$queue->set_data($result);
 $queue->enqueue(77);
 $result = $queue->get_data();
 var_dump('再入队一个', $result);
 
 // 再入队一个
-$queue->set_data($result);
 $queue->enqueue('你好');
 $result = $queue->get_data();
 var_dump('再入队一个', $result);
 
 // 出队一个
-$queue->set_data($result);
 $queue->dequeue();
 $result = $queue->get_data();
 var_dump('出队一个', $result);
 
 // 再出队一个
-$queue->set_data($result);
 $queue->dequeue();
 $result = $queue->get_data();
 var_dump('再出队一个', $result);
