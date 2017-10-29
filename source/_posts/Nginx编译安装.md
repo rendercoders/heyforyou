@@ -3,7 +3,9 @@ title: Nginx编译安装
 date: 2017-10-27 10:53:37
 tags:
 ---
+先占坑 test
 
+<!-- more -->
 所有工具都放这里
 ```
 $ cd /usr/local/src
