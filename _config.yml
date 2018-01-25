@@ -14,7 +14,7 @@ keywords: "php,linux,html,mysql,js,javascript"
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
 url: http://heyforyou.com
 root: /
-permalink: :year/:month/:day/:title/
+permalink: :year/:month/:day/:post_time.html
 permalink_defaults:
 
 # Directory
@@ -63,6 +63,7 @@ tag_map:
 ## http://momentjs.com/docs/#/displaying/format/
 date_format: YYYY-MM-DD
 time_format: HH:mm:ss
+post_time_format: YYYYMMDDHHmmss
 
 # Pagination
 ## Set per_page to 0 to disable pagination
