@@ -1,5 +1,5 @@
 ---
-title: 由一个Linux命令引发的英语语法思考
+title: 由一个 Linux 命令引发的英语语法思考
 date: 2018-01-26 15:17:10
 tags: [记生活]
 ---
@@ -11,7 +11,6 @@ tags: [记生活]
 南街浊酒 14:40:15
 ![](/assets/images/posts/yufasikao_1.png)
 这个单词不应该是 who i am 吗
-
 
 苏州酱鸭  14:41:08
 为啥是who i am
