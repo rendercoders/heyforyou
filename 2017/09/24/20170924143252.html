@@ -6,19 +6,21 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://heyforyou.com">
-  <title>Nginx学习笔记 | LHC生活技术宅</title>
+  <title>简单用PHP理解队列的ENQUEUE和DEQUEUE | LHC生活技术宅</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Nginx 既可以作为HTTP服务器，也可以作为反向代理服务器或者邮件服务器；能够快速响应静态页面的请求；支持FastCGI、SSL、Virtual Host、URL Rewrite、HTTP Basic Auth、Gzip等大量使用功能；并且支持更多的第三方功能模块的扩展。 负载均衡，一般包含两个方面的含义。一方面是，将单一的重负载分担到多个网络节点上做并行处理，每个节点处理结束后将结果汇总返回">
-<meta name="keywords" content="Nginx">
+  <meta name="description" content="什么是队列队列(queue)是一种动态集合，实现的是一种先进先出(first-in, first-out, FIFO)的策略。 队列的ENQUEUE和DEQUEUE队列上的INSERT操作被称为入队(ENQUEUE)，DELETE操作称为出队(DEQUEUE)。队列有队头(head)和队尾(tail)，当有一个元素入队时，它就会被放在队尾的位置。">
+<meta name="keywords" content="数据结构,队列">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Nginx学习笔记">
-<meta property="og:url" content="http://heyforyou.com/2017/10/19/undefined.html">
+<meta property="og:title" content="简单用PHP理解队列的ENQUEUE和DEQUEUE">
+<meta property="og:url" content="http://heyforyou.com/2017/09/24/20170924143252.html">
 <meta property="og:site_name" content="LHC生活技术宅">
-<meta property="og:description" content="Nginx 既可以作为HTTP服务器，也可以作为反向代理服务器或者邮件服务器；能够快速响应静态页面的请求；支持FastCGI、SSL、Virtual Host、URL Rewrite、HTTP Basic Auth、Gzip等大量使用功能；并且支持更多的第三方功能模块的扩展。 负载均衡，一般包含两个方面的含义。一方面是，将单一的重负载分担到多个网络节点上做并行处理，每个节点处理结束后将结果汇总返回">
-<meta property="og:updated_time" content="2018-02-26T03:44:41.385Z">
+<meta property="og:description" content="什么是队列队列(queue)是一种动态集合，实现的是一种先进先出(first-in, first-out, FIFO)的策略。 队列的ENQUEUE和DEQUEUE队列上的INSERT操作被称为入队(ENQUEUE)，DELETE操作称为出队(DEQUEUE)。队列有队头(head)和队尾(tail)，当有一个元素入队时，它就会被放在队尾的位置。">
+<meta property="og:image" content="http://owq1mzbaq.bkt.clouddn.com/%E9%98%9F%E5%88%97-queue.png">
+<meta property="og:updated_time" content="2018-02-26T03:44:41.389Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Nginx学习笔记">
-<meta name="twitter:description" content="Nginx 既可以作为HTTP服务器，也可以作为反向代理服务器或者邮件服务器；能够快速响应静态页面的请求；支持FastCGI、SSL、Virtual Host、URL Rewrite、HTTP Basic Auth、Gzip等大量使用功能；并且支持更多的第三方功能模块的扩展。 负载均衡，一般包含两个方面的含义。一方面是，将单一的重负载分担到多个网络节点上做并行处理，每个节点处理结束后将结果汇总返回">
+<meta name="twitter:title" content="简单用PHP理解队列的ENQUEUE和DEQUEUE">
+<meta name="twitter:description" content="什么是队列队列(queue)是一种动态集合，实现的是一种先进先出(first-in, first-out, FIFO)的策略。 队列的ENQUEUE和DEQUEUE队列上的INSERT操作被称为入队(ENQUEUE)，DELETE操作称为出队(DEQUEUE)。队列有队头(head)和队尾(tail)，当有一个元素入队时，它就会被放在队尾的位置。">
+<meta name="twitter:image" content="http://owq1mzbaq.bkt.clouddn.com/%E9%98%9F%E5%88%97-queue.png">
   
     <link rel="alternative" href="/atom.xml" title="LHC生活技术宅" type="application/atom+xml">
   
@@ -150,32 +152,32 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Nginx学习笔记" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-简单用PHP理解队列的ENQUEUE和DEQUEUE" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Nginx学习笔记
+      简单用PHP理解队列的ENQUEUE和DEQUEUE
     </h1>
   
 
         
-        <a href="/2017/10/19/undefined.html" class="archive-article-date">
-  	<time datetime="2017-10-19T06:23:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-19</time>
+        <a href="/2017/09/24/20170924143252.html" class="archive-article-date">
+  	<time datetime="2017-09-24T06:32:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-24</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Nginx 既可以作为HTTP服务器，也可以作为反向代理服务器或者邮件服务器；能够快速响应静态页面的请求；支持FastCGI、SSL、Virtual Host、URL Rewrite、HTTP Basic Auth、Gzip等大量使用功能；并且支持更多的第三方功能模块的扩展。</p>
-<p>负载均衡，一般包含两个方面的含义。一方面是，将单一的重负载分担到多个网络节点上做并行处理，每个节点处理结束后将结果汇总返回给用户，这样可以大幅提高网络系统的处理能力；第二个方面的含义是，将大量的前端并发访问或数据流量分到到多个后端网络节点上分别处理，这样可以有效减少前端用户等待响应的时间。<br><a id="more"></a></p>
-<p>Nginx服务器的负载均衡主要是对大量前端访问和流量进行分流，以保证前端用户访问效率。</p>
-<p>Nginx服务器的负载均衡策略可以分为两大类:内置策略和扩展策略<br>内置策略：主要包括轮询、加权轮询和IP hash三种。会被编译进Nginx内核，只要设置相关参数就可以使用<br>扩展策略：主要通过第三方模块实现，种类比较丰富，常见的有url hash、fair等。不会编译进Nginx内核，需要手动将第三方模块编译到Nginx内核。</p>
-<p>Nginx服务器的web缓存服务主要由Proxy_Cache相关指令集合FastCGI_Cache相关指令集构成。<br>Proxy_Cache主要用在Nginx服务器提供反向代理服务时，对后端源服务器的返回内容进行URL缓存。<br>FastCGI_Cache主要用于对FastCGI的动态程序进行缓存。</p>
-<p>第三方模块ngx_cache_purge主要用户清除Nginx服务器上指定的URL缓存</p>
+        <h3 id="什么是队列"><a href="#什么是队列" class="headerlink" title="什么是队列"></a>什么是队列</h3><p><code>队列</code>(queue)是一种<code>动态集合</code>，实现的是一种<code>先进先出</code>(first-in, first-out, FIFO)的策略。</p>
+<h3 id="队列的ENQUEUE和DEQUEUE"><a href="#队列的ENQUEUE和DEQUEUE" class="headerlink" title="队列的ENQUEUE和DEQUEUE"></a>队列的ENQUEUE和DEQUEUE</h3><p>队列上的<code>INSERT</code>操作被称为<code>入队</code>(ENQUEUE)，<code>DELETE</code>操作称为<code>出队</code>(DEQUEUE)。<code>队列</code>有<code>队头</code>(head)和<code>队尾</code>(tail)，当有一个元素入队时，它就会被放在队尾的位置。</p>
+<a id="more"></a>
+<h3 id="举个栗子"><a href="#举个栗子" class="headerlink" title="举个栗子"></a>举个栗子</h3><p>我们生活中常见到的买单，先排队的先付钱。</p>
+<h3 id="PHP代码实现"><a href="#PHP代码实现" class="headerlink" title="PHP代码实现"></a>PHP代码实现</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div><div class="line">126</div><div class="line">127</div><div class="line">128</div><div class="line">129</div><div class="line">130</div><div class="line">131</div><div class="line">132</div><div class="line">133</div><div class="line">134</div><div class="line">135</div></pre></td><td class="code"><pre><div class="line">// 定义一个简单的队列类</div><div class="line">class Queue</div><div class="line">&#123;</div><div class="line">	protected $overflow;</div><div class="line"></div><div class="line">	protected $data;</div><div class="line"></div><div class="line">	// 设置上溢</div><div class="line">	public function set_overflow($overflow)</div><div class="line">	&#123;</div><div class="line">		if (!$overflow) &#123;</div><div class="line">			throw new Exception(&quot;缺少参数&quot;);</div><div class="line">		&#125;</div><div class="line">		$this-&gt;overflow = $overflow;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	// 获取上溢</div><div class="line">	protected function get_overflow()</div><div class="line">	&#123;</div><div class="line">		return $this-&gt;overflow;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	// 设置数据</div><div class="line">	public function set_data($data)</div><div class="line">	&#123;</div><div class="line">		// 判断是否为数组</div><div class="line">		if (!is_array($data)) &#123;</div><div class="line">			throw new Exception(&apos;参数类型错误，参数类型为数组&apos;);</div><div class="line">		&#125;</div><div class="line">		$this-&gt;data = $data;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	// 获取数据</div><div class="line">	public function get_data()</div><div class="line">	&#123;</div><div class="line">		return $this-&gt;data;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	// 入队</div><div class="line">	public function enqueue($value)</div><div class="line">	&#123;</div><div class="line">		if (!$value) &#123;</div><div class="line">			throw new Exception(&quot;缺少参数&quot;);</div><div class="line">		&#125;</div><div class="line">		$array = $this-&gt;data;</div><div class="line">		// 判断是否上溢</div><div class="line">		if ($this-&gt;check_is_overflow()) &#123;</div><div class="line">			throw new Exception(&apos;队列上溢&apos;);</div><div class="line">		&#125;</div><div class="line">		$array = array_values($array);</div><div class="line">		$array[] = $value;</div><div class="line">		$this-&gt;data = $array;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	// 出队</div><div class="line">	public function dequeue()</div><div class="line">	&#123;</div><div class="line">		$array = $this-&gt;data;</div><div class="line">		// 判断是否下溢</div><div class="line">		if ($this-&gt;check_is_underflow()) &#123;</div><div class="line">			throw new Exception(&apos;队列下溢&apos;);</div><div class="line">		&#125;</div><div class="line">		// 判断是否上溢</div><div class="line">		if ($this-&gt;check_is_overflow()) &#123;</div><div class="line">			throw new Exception(&apos;队列上溢&apos;);</div><div class="line">		&#125;</div><div class="line">		$array = array_values($array);</div><div class="line">		$head = 0;</div><div class="line">		$array_count = count($array);</div><div class="line">		if ($head == $array_count) &#123;</div><div class="line">			$this-&gt;data = $array;</div><div class="line">			return;</div><div class="line">		&#125;</div><div class="line">		unset($array[$head]);</div><div class="line">		$array = array_values($array);</div><div class="line">		$this-&gt;data = $array;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	// 判断是否下溢</div><div class="line">	protected function check_is_underflow()</div><div class="line">	&#123;</div><div class="line">		$array_count = count($this-&gt;data);</div><div class="line">		if ($array_count &lt;= 0) &#123;</div><div class="line">			return true;</div><div class="line">		&#125;</div><div class="line">		return false;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	// 判断是否上溢</div><div class="line">	protected function check_is_overflow()</div><div class="line">	&#123;</div><div class="line">		$array_count = count($this-&gt;data);</div><div class="line">		$overflow = $this-&gt;overflow;</div><div class="line">		if (isset($overflow) &amp;&amp; $array_count &gt;= $overflow) &#123;</div><div class="line">			return true;</div><div class="line">		&#125;</div><div class="line">		return false;</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">$queue = new Queue();</div><div class="line">// 设置上溢</div><div class="line">$queue-&gt;set_overflow(10);</div><div class="line">// 测试数据</div><div class="line">$testArr = [&apos;123123&apos;, &apos;test&apos;, &apos;hello&apos;];</div><div class="line">// 设置数据</div><div class="line">$queue-&gt;set_data($testArr);</div><div class="line">// 获取数据</div><div class="line">$result = $queue-&gt;get_data();</div><div class="line">var_dump(&apos;测试数据&apos;, $result);</div><div class="line"></div><div class="line">// 入队一个</div><div class="line">$queue-&gt;enqueue(234);</div><div class="line">$result = $queue-&gt;get_data();</div><div class="line">var_dump(&apos;入队一个&apos;, $result);</div><div class="line"></div><div class="line">// 再入队一个</div><div class="line">$queue-&gt;enqueue(77);</div><div class="line">$result = $queue-&gt;get_data();</div><div class="line">var_dump(&apos;再入队一个&apos;, $result);</div><div class="line"></div><div class="line">// 再入队一个</div><div class="line">$queue-&gt;enqueue(&apos;你好&apos;);</div><div class="line">$result = $queue-&gt;get_data();</div><div class="line">var_dump(&apos;再入队一个&apos;, $result);</div><div class="line"></div><div class="line">// 出队一个</div><div class="line">$queue-&gt;dequeue();</div><div class="line">$result = $queue-&gt;get_data();</div><div class="line">var_dump(&apos;出队一个&apos;, $result);</div><div class="line"></div><div class="line">// 再出队一个</div><div class="line">$queue-&gt;dequeue();</div><div class="line">$result = $queue-&gt;get_data();</div><div class="line">var_dump(&apos;再出队一个&apos;, $result);</div></pre></td></tr></table></figure>
+<h3 id="打印的结果"><a href="#打印的结果" class="headerlink" title="打印的结果"></a>打印的结果</h3><p><img src="http://owq1mzbaq.bkt.clouddn.com/%E9%98%9F%E5%88%97-queue.png" alt="打印的结果"></p>
 
       
 
@@ -189,7 +191,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Nginx</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">数据结构</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">队列</a>
         		</li>
       		
 		</ul>
@@ -245,7 +251,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=http://heyforyou.com/2017/10/19/undefined.html" alt="微信分享二维码">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://heyforyou.com/2017/09/24/20170924143252.html" alt="微信分享二维码">
     </div>
 </div>
 
@@ -259,18 +265,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2017/10/22/undefined.html" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2017/09/25/20170925232314.html" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          Linux学习笔记
+          如何使用PHP排序key为字母+数字的数组
         
       </div>
     </a>
   
   
-    <a href="/2017/10/18/undefined.html" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">《转载》redis命令总结</div>
+    <a href="/2017/09/24/20170924134245.html" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">简单用PHP理解栈的PUSH和POP</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -475,15 +481,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">记生活</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">栈</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">记生活</a>
               </li>
              
               <li class="article-tag-list-item">

@@ -6,18 +6,21 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://heyforyou.com">
-  <title>Tag: redis | LHC生活技术宅</title>
+  <title>如何在Ubuntu 16.04搭建Shadowsocks | LHC生活技术宅</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="我的孤独是一座花园。">
-<meta name="keywords" content="php,linux,html,mysql,js,javascript">
-<meta property="og:type" content="website">
-<meta property="og:title" content="LHC生活技术宅">
-<meta property="og:url" content="http://heyforyou.com/tags/redis/index.html">
+  <meta name="description" content="闲的，今天就教大家如何使用国外服务器搭建一个shadowsocks。 第一种配置方法.第一步更新软件源1$ sudo apt update 第二步安装pip1$ sudo apt -y install python-pip">
+<meta name="keywords" content="Ubuntu,Shadowsocks">
+<meta property="og:type" content="article">
+<meta property="og:title" content="如何在Ubuntu 16.04搭建Shadowsocks">
+<meta property="og:url" content="http://heyforyou.com/2017/09/23/20170923144327.html">
 <meta property="og:site_name" content="LHC生活技术宅">
-<meta property="og:description" content="我的孤独是一座花园。">
+<meta property="og:description" content="闲的，今天就教大家如何使用国外服务器搭建一个shadowsocks。 第一种配置方法.第一步更新软件源1$ sudo apt update 第二步安装pip1$ sudo apt -y install python-pip">
+<meta property="og:image" content="http://owq1mzbaq.bkt.clouddn.com/shadowsocks.png">
+<meta property="og:updated_time" content="2018-02-26T03:44:41.388Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="LHC生活技术宅">
-<meta name="twitter:description" content="我的孤独是一座花园。">
+<meta name="twitter:title" content="如何在Ubuntu 16.04搭建Shadowsocks">
+<meta name="twitter:description" content="闲的，今天就教大家如何使用国外服务器搭建一个shadowsocks。 第一种配置方法.第一步更新软件源1$ sudo apt update 第二步安装pip1$ sudo apt -y install python-pip">
+<meta name="twitter:image" content="http://owq1mzbaq.bkt.clouddn.com/shadowsocks.png">
   
     <link rel="alternative" href="/atom.xml" title="LHC生活技术宅" type="application/atom+xml">
   
@@ -149,60 +152,178 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-如何在Ubuntu-16-04搭建Shadowsocks" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/10/18/20171018231022.html" class="archive-article-date">
-  	<time datetime="2017-10-18T15:10:22.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-18</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/10/18/20171018231022.html">《转载》redis命令总结</a>
+    <h1 class="article-title" itemprop="name">
+      如何在Ubuntu 16.04搭建Shadowsocks
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2017/09/23/20170923144327.html" class="archive-article-date">
+  	<time datetime="2017-09-23T06:43:27.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-23</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>闲的，今天就教大家如何使用国外服务器搭建一个shadowsocks。</p>
+<h1 id="第一种配置方法"><a href="#第一种配置方法" class="headerlink" title="第一种配置方法."></a>第一种配置方法.</h1><h2 id="第一步更新软件源"><a href="#第一步更新软件源" class="headerlink" title="第一步更新软件源"></a>第一步更新软件源</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ sudo apt update</div></pre></td></tr></table></figure>
+<h2 id="第二步安装pip"><a href="#第二步安装pip" class="headerlink" title="第二步安装pip"></a>第二步安装pip</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ sudo apt -y install python-pip</div></pre></td></tr></table></figure>
+<a id="more"></a>
+<h2 id="第三步"><a href="#第三步" class="headerlink" title="第三步"></a>第三步</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ pip install --upgrade pip</div></pre></td></tr></table></figure>
+<h2 id="第四步"><a href="#第四步" class="headerlink" title="第四步"></a>第四步</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ pip install setuptools</div></pre></td></tr></table></figure>
+<h2 id="第五步安装shadowsocks"><a href="#第五步安装shadowsocks" class="headerlink" title="第五步安装shadowsocks"></a>第五步安装shadowsocks</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ sudo pip install shadowsocks</div></pre></td></tr></table></figure>
+<h2 id="第六步配置shadowsocks，并开启"><a href="#第六步配置shadowsocks，并开启" class="headerlink" title="第六步配置shadowsocks，并开启"></a>第六步配置shadowsocks，并开启</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo ssserver -p 端口号 -k 密码 -m 加密方法 -d start</div></pre></td></tr></table></figure>
+<p><code>端口号</code> 默认 <code>8388</code> 我比较喜欢换成 <code>8888</code><br><code>加密方法</code> 默认 <code>rc4-md5</code> 建议改成 <code>aes-256-cfb</code></p>
+<h1 id="第二种配置方法-使用配置文件"><a href="#第二种配置方法-使用配置文件" class="headerlink" title="第二种配置方法: 使用配置文件"></a>第二种配置方法: 使用配置文件</h1><h2 id="第一到第五步配置跟上面的一样"><a href="#第一到第五步配置跟上面的一样" class="headerlink" title="第一到第五步配置跟上面的一样"></a>第一到第五步配置跟上面的一样</h2><p>配置文件必须是json格式，否则会报错<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">	&quot;server&quot;:&quot;服务器IP地址&quot;,</div><div class="line">	&quot;server_port&quot;: 端口号,</div><div class="line">	&quot;local_address&quot;: &quot;127.0.0.1&quot;,</div><div class="line">	&quot;local_port&quot;:1080,</div><div class="line">	&quot;password&quot;: &quot;密码&quot;,</div><div class="line">	&quot;timeout&quot;:300,</div><div class="line">	&quot;method&quot;: &quot;aes-256-cfb&quot;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>各字段的含义：<br><code>server</code>：服务器IP地址<br><code>server_port</code>：服务器端口号<br><code>local_address</code>：本地监听的IP地址<br><code>password</code>：加密的密码<br><code>timeout</code>：超时时间（秒）<br><code>method</code>：加密方法，可选择 <code>bf-cfb</code>, <code>aes-256-cfb</code>, <code>des-cfb</code>, <code>rc4</code>, 等等。默认是一种不安全的加密，推荐用 <code>aes-256-cfb</code></p>
+<ul>
+<li><p>创建一个json文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ vim /etc/shadowsocks.json</div></pre></td></tr></table></figure>
+</li>
+<li><p>把上面的配置好的JSON内容复制到shadowsocks.json文件中,保存退出</p>
+</li>
+<li><p>启动shadowsocks</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ sudo ssserver -c /etc/shadowsocks.json -d start</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="第七步，使用shadowsocks客户端连接服务器"><a href="#第七步，使用shadowsocks客户端连接服务器" class="headerlink" title="第七步，使用shadowsocks客户端连接服务器"></a>第七步，使用shadowsocks客户端连接服务器</h2><p><img src="http://owq1mzbaq.bkt.clouddn.com/shadowsocks.png" alt="shadowsocks客户端"></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">redis</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Ubuntu</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Shadowsocks</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://heyforyou.com/2017/09/23/20170923144327.html" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/2017/09/24/20170924134245.html" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          简单用PHP理解栈的PUSH和POP
+        
+      </div>
+    </a>
   
   
-    </div></section>
+    <a href="/2017/09/23/20170923000254.html" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Markdown 语法写作使用说明</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -225,9 +346,9 @@
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: true,
 		toc_hide_index: true,

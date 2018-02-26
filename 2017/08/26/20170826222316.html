@@ -6,19 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://heyforyou.com">
-  <title>《转载》redis命令总结 | LHC生活技术宅</title>
+  <title>阿里云Ubuntu安装LNMP环境之Nginx | LHC生活技术宅</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="连接操作相关的命令默认直接连接  远程连接-h 192.168.1.20 -p 6379ping 测试连接是否存活如果正常会返回pongecho 打印select 切换到指定的数据库，数据库索引号 index 用数字值指定，以 0 作为起始索引值quit 关闭连接（connection）auth 简单密码认证">
-<meta name="keywords" content="redis">
+  <meta name="description" content="在QQ群很多朋友问阿里云服务器怎么安装LNMP环境，怎么把项目放到服务器上面去，在这里，我就从头开始教大家怎么在阿里云服务器安装LNMP环境。在这之前，我们先要知道什么是LNMP。L: 表示的是Linux系统, 包括Ubuntu、Centos但不限于以上两种的系统版本。N: 表示的是Nginx,这是一个高性能的HTTP和反向代理服务器，也是一个IMAP/POP3/SMTP代理服务器。M: 表示的是">
+<meta name="keywords" content="Nginx,PHP">
 <meta property="og:type" content="article">
-<meta property="og:title" content="《转载》redis命令总结">
-<meta property="og:url" content="http://heyforyou.com/2017/10/18/undefined.html">
+<meta property="og:title" content="阿里云Ubuntu安装LNMP环境之Nginx">
+<meta property="og:url" content="http://heyforyou.com/2017/08/26/20170826222316.html">
 <meta property="og:site_name" content="LHC生活技术宅">
-<meta property="og:description" content="连接操作相关的命令默认直接连接  远程连接-h 192.168.1.20 -p 6379ping 测试连接是否存活如果正常会返回pongecho 打印select 切换到指定的数据库，数据库索引号 index 用数字值指定，以 0 作为起始索引值quit 关闭连接（connection）auth 简单密码认证">
-<meta property="og:updated_time" content="2018-02-26T03:44:41.386Z">
+<meta property="og:description" content="在QQ群很多朋友问阿里云服务器怎么安装LNMP环境，怎么把项目放到服务器上面去，在这里，我就从头开始教大家怎么在阿里云服务器安装LNMP环境。在这之前，我们先要知道什么是LNMP。L: 表示的是Linux系统, 包括Ubuntu、Centos但不限于以上两种的系统版本。N: 表示的是Nginx,这是一个高性能的HTTP和反向代理服务器，也是一个IMAP/POP3/SMTP代理服务器。M: 表示的是">
+<meta property="og:updated_time" content="2018-02-26T03:44:41.390Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="《转载》redis命令总结">
-<meta name="twitter:description" content="连接操作相关的命令默认直接连接  远程连接-h 192.168.1.20 -p 6379ping 测试连接是否存活如果正常会返回pongecho 打印select 切换到指定的数据库，数据库索引号 index 用数字值指定，以 0 作为起始索引值quit 关闭连接（connection）auth 简单密码认证">
+<meta name="twitter:title" content="阿里云Ubuntu安装LNMP环境之Nginx">
+<meta name="twitter:description" content="在QQ群很多朋友问阿里云服务器怎么安装LNMP环境，怎么把项目放到服务器上面去，在这里，我就从头开始教大家怎么在阿里云服务器安装LNMP环境。在这之前，我们先要知道什么是LNMP。L: 表示的是Linux系统, 包括Ubuntu、Centos但不限于以上两种的系统版本。N: 表示的是Nginx,这是一个高性能的HTTP和反向代理服务器，也是一个IMAP/POP3/SMTP代理服务器。M: 表示的是">
   
     <link rel="alternative" href="/atom.xml" title="LHC生活技术宅" type="application/atom+xml">
   
@@ -150,35 +150,37 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-《转载》redis命令总结" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-阿里云Ubuntu安装LNMP环境之Nginx" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      《转载》redis命令总结
+      阿里云Ubuntu安装LNMP环境之Nginx
     </h1>
   
 
         
-        <a href="/2017/10/18/undefined.html" class="archive-article-date">
-  	<time datetime="2017-10-18T15:10:22.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-18</time>
+        <a href="/2017/08/26/20170826222316.html" class="archive-article-date">
+  	<time datetime="2017-08-26T14:23:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-26</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="连接操作相关的命令"><a href="#连接操作相关的命令" class="headerlink" title="连接操作相关的命令"></a>连接操作相关的命令</h3><p>默认直接连接  远程连接-h 192.168.1.20 -p 6379<br><code>ping</code> 测试连接是否存活如果正常会返回pong<br><code>echo</code> 打印<br><code>select</code> 切换到指定的数据库，数据库索引号 index 用数字值指定，以 0 作为起始索引值<br><code>quit</code> 关闭连接（connection）<br><code>auth</code> 简单密码认证<br><a id="more"></a></p>
-<h3 id="服务端相关命令"><a href="#服务端相关命令" class="headerlink" title="服务端相关命令"></a>服务端相关命令</h3><p><code>time</code> 返回当前服务器时间<br><code>client list</code> 返回所有连接到服务器的客户端信息和统计数据  参见<a href="http://redisdoc.com/server/client_list.html" target="_blank" rel="noopener">http://redisdoc.com/server/client_list.html</a><br><code>client kill ip:port</code> 关闭地址为 ip:port 的客户端<br><code>save</code> 将数据同步保存到磁盘<br><code>bgsave</code> 将数据异步保存到磁盘<br><code>lastsave</code> 返回上次成功将数据保存到磁盘的Unix时戳<br><code>shundown</code> 将数据同步保存到磁盘，然后关闭服务<br><code>info</code> 提供服务器的信息和统计<br><code>config resetstat</code> 重置info命令中的某些统计数据<br><code>config get</code> 获取配置文件信息<br><code>config set</code> 动态地调整 Redis 服务器的配置(configuration)而无须重启，可以修改的配置参数可以使用命令 CONFIG GET * 来列出<br><code>config rewrite</code> Redis 服务器时所指定的 redis.conf 文件进行改写<br><code>monitor</code> 实时转储收到的请求<br><code>slaveof</code> 改变复制策略设置</p>
-<h3 id="发布订阅相关命令"><a href="#发布订阅相关命令" class="headerlink" title="发布订阅相关命令"></a>发布订阅相关命令</h3><p><code>psubscribe</code> 订阅一个或多个符合给定模式的频道 例如psubscribe news.<em> tweet.</em><br><code>publish</code> 将信息 message 发送到指定的频道 channel 例如publish msg “good morning”<br><code>pubsub channels</code> 列出当前的活跃频道 例如PUBSUB CHANNELS news.i*<br><code>pubsub numsub</code> 返回给定频道的订阅者数量 例如PUBSUB NUMSUB news.it news.internet news.sport news.music<br><code>pubsub numpat</code> 返回客户端订阅的所有模式的数量总和<br><code>punsubscribe</code> 指示客户端退订所有给定模式。<br><code>subscribe</code> 订阅给定的一个或多个频道的信息。例如 subscribe msg chat_room<br><code>unsubscribe</code> 指示客户端退订给定的频道。</p>
-<h3 id="对KEY操作的命令"><a href="#对KEY操作的命令" class="headerlink" title="对KEY操作的命令"></a>对KEY操作的命令</h3><p><code>exists(key)</code> 确认一个key是否存在<br><code>del(key)</code> 删除一个key<br><code>type(key)</code> 返回值的类型<br><code>keys(pattern)</code> 返回满足给定pattern的所有key<br><code>randomkey</code> 随机返回key空间的一个<br><code>keyrename(oldname, newname)</code> 重命名key<br><code>dbsize</code> 返回当前数据库中key的数目<br><code>expire</code> 设定一个key的活动时间（s）<br><code>ttl</code> 获得一个key的活动时间<br><code>move(key, dbindex)</code> 移动当前数据库中的key到dbindex数据库<br><code>flushdb</code> 删除当前选择数据库中的所有key<br><code>flushall</code> 删除所有数据库中的所有key</p>
-<h3 id="对String操作的命令"><a href="#对String操作的命令" class="headerlink" title="对String操作的命令"></a>对String操作的命令</h3><p><code>set(key, value)</code> 给数据库中名称为key的string赋予值value<br><code>get(key)</code> 返回数据库中名称为key的string的value<br><code>getset(key, value)</code> 给名称为key的string赋予上一次的value<br><code>mget(key1, key2,…, key N)</code> 返回库中多个string的value<br><code>setnx(key, value)</code> 添加string，名称为key，值为value<br><code>setex(key, time, value)</code> 向库中添加string，设定过期时间time<br><code>mset(key N, value N)</code> 批量设置多个string的值<br><code>msetnx(key N, value N)</code> 如果所有名称为key i的string都不存在<br><code>incr(key)</code> 名称为key的string增1操作<br><code>incrby(key, integer)</code> 名称为key的string增加integer<br><code>decr(key)</code> 名称为key的string减1操作<br><code>decrby(key, integer)</code> 名称为key的string减少integer<br><code>append(key, value)</code> 名称为key的string的值附加value<br><code>substr(key, start, end)</code> 返回名称为key的string的value的子串</p>
-<h3 id="对List操作的命令"><a href="#对List操作的命令" class="headerlink" title="对List操作的命令"></a>对List操作的命令</h3><p><code>rpush(key, value)</code> 在名称为key的list尾添加一个值为value的元素<br><code>lpush(key, value)</code> 在名称为key的list头添加一个值为value的 元素<br><code>llen(key)</code> 返回名称为key的list的长度<br><code>lrange(key, start, end)</code> 返回名称为key的list中start至end之间的元素<br><code>ltrim(key, start, end)</code> 截取名称为key的list<br><code>lindex(key, index)</code> 返回名称为key的list中index位置的元素<br><code>lset(key, index, value)</code> 给名称为key的list中index位置的元素赋值<br><code>lrem(key, count, value)</code> 删除count个key的list中值为value的元素<br><code>lpop(key)</code> 返回并删除名称为key的list中的首元素<br><code>rpop(key)</code> 返回并删除名称为key的list中的尾元素<br><code>blpop(key1, key2,… key N, timeout)</code> lpop命令的block版本。<br><code>brpop(key1, key2,… key N, timeout)</code> rpop的block版本。<br><code>rpoplpush(srckey, dstkey)</code> 返回并删除名称为srckey的list的尾元素，并将该元素添加到名称为dstkey的list的头部</p>
-<h3 id="对Set操作的命令"><a href="#对Set操作的命令" class="headerlink" title="对Set操作的命令"></a>对Set操作的命令</h3><p><code>sadd(key, member)</code> 向名称为key的set中添加元素member<br><code>srem(key, member)</code> 删除名称为key的set中的元素member<br><code>spop(key)</code> 随机返回并删除名称为key的set中一个元素<br><code>smove(srckey, dstkey, member)</code> 移到集合元素<br><code>scard(key)</code> 返回名称为key的set的基数<br><code>sismember(key, member)</code> member是否是名称为key的set的元素<br><code>sinter(key1, key2,…key N)</code> 求交集<br><code>sinterstore(dstkey, (keys))</code> 求交集并将交集保存到dstkey的集合<br><code>sunion(key1, (keys))</code> 求并集<br><code>sunionstore(dstkey, (keys))</code> 求并集并将并集保存到dstkey的集合<br><code>sdiff(key1, (keys))</code> 求差集<br><code>sdiffstore(dstkey, (keys))</code> 求差集并将差集保存到dstkey的集合<br><code>smembers(key)</code> 返回名称为key的set的所有元素<br><code>srandmember(key)</code> 随机返回名称为key的set的一个元素</p>
-<h3 id="对Hash操作的命令"><a href="#对Hash操作的命令" class="headerlink" title="对Hash操作的命令"></a>对Hash操作的命令</h3><p><code>hset(key, field, value)</code> 向名称为key的hash中添加元素field<br><code>hget(key, field)</code> 返回名称为key的hash中field对应的value<br><code>hmget(key, (fields))</code> 返回名称为key的hash中field i对应的value<br><code>hmset(key, (fields))</code> 向名称为key的hash中添加元素field<br><code>hincrby(key, field, integer)</code> 将名称为key的hash中field的value增加integer<br><code>hexists(key, field)</code> 名称为key的hash中是否存在键为field的域<br><code>hdel(key, field)</code> 删除名称为key的hash中键为field的域<br><code>hlen(key)</code> 返回名称为key的hash中元素个数<br><code>hkeys(key)</code> 返回名称为key的hash中所有键<br><code>hvals(key)</code> 返回名称为key的hash中所有键对应的value<br><code>hgetall(key)</code> 返回名称为key的hash中所有的键（field）及其对应的value</p>
-<p>转载自 <a href="http://www.cnblogs.com/silent2012/p/5368925.html" target="_blank" rel="noopener">http://www.cnblogs.com/silent2012/p/5368925.html</a></p>
+        <p>在QQ群很多朋友问阿里云服务器怎么安装LNMP环境，怎么把项目放到服务器上面去，在这里，我就从头开始教大家怎么在阿里云服务器安装LNMP环境。<br>在这之前，我们先要知道什么是LNMP。<br>L: 表示的是Linux系统, 包括Ubuntu、Centos但不限于以上两种的系统版本。<br>N: 表示的是Nginx,这是一个高性能的HTTP和反向代理服务器，也是一个IMAP/POP3/SMTP代理服务器。<br>M: 表示的是Mysql,Mysql是一个小型关系型数据库管理系统。<br>P: 表示的是PHP,PHP是一种在服务器端执行的嵌入HTML文档的脚本语言。<br><a id="more"></a></p>
+<p>首先, 我们使用ssh连接到服务器:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$  ssh root@xxx.xxx.xxx.xxx</div></pre></td></tr></table></figure></p>
+<p>接着我们需要更新一下apt管理工具包:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ apt update</div></pre></td></tr></table></figure></p>
+<p>更新完之后,使用包管理工具直接下载Nginx:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ apt install -y nginx</div></pre></td></tr></table></figure></p>
+<p>这个时候可以看一下外面安装的nginx在放在哪里:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ whereis nginx</div><div class="line">nginx: /usr/sbin/nginx /etc/nginx /usr/share/nginx</div></pre></td></tr></table></figure></p>
+<p>现在我们先不管配置, 打开浏览器, 输入服务器IP地址访问, 如果出现:<br>Welcome to nginx!<br>那就证明已经安装成功了Nginx。</p>
+<p>先简单说一下配置:<br>现在我使用的nginx版本是1.10.3<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ nginx -v</div><div class="line">nginx version: nginx/1.10.3 (Ubuntu)</div></pre></td></tr></table></figure></p>
+<p>这个版本的配置在/etc/nginx/sites-enabled/default<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ cd /etc/nginx/sites-enabled/</div><div class="line">$ ls</div><div class="line">default</div></pre></td></tr></table></figure></p>
+<p>这个default里面就有我们一会要配置的东西.</p>
+<p>还有就是关于Nginx的错误日志的路径/var/log/nginx, 很多时候我们找错误都是从错误日志中找到问题的解决方法，所以这个路径还是要记住的。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ cd /var/log/nginx</div><div class="line">$ ls</div><div class="line">access.log  error.log</div></pre></td></tr></table></figure></p>
+<p>PHP-HTML5学习交流群:<br>QQ一群群号: 476614753<br>QQ二群群号: 577094233</p>
 
       
 
@@ -192,7 +194,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">redis</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Nginx</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">PHP</a>
         		</li>
       		
 		</ul>
@@ -248,7 +254,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=http://heyforyou.com/2017/10/18/undefined.html" alt="微信分享二维码">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://heyforyou.com/2017/08/26/20170826222316.html" alt="微信分享二维码">
     </div>
 </div>
 
@@ -262,18 +268,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2017/10/19/undefined.html" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2017/08/27/20170827000140.html" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          Nginx学习笔记
+          阿里云Ubuntu安装LNMP环境之Mysql
         
       </div>
     </a>
   
   
-    <a href="/2017/09/25/undefined.html" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">如何使用PHP排序key为字母+数字的数组</div>
+    <a href="/2017/08/26/20170826095047.html" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">git避免提交本地配置文件-来自同事的分享</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -478,15 +484,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">记生活</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">栈</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">记生活</a>
               </li>
              
               <li class="article-tag-list-item">

@@ -6,19 +6,21 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://heyforyou.com">
-  <title>mysql联结表(一) | LHC生活技术宅</title>
+  <title>简单用PHP理解栈的PUSH和POP | LHC生活技术宅</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="创建联结联结的创建非常简单，规定要联结的所有表以及它们如何关联即可。如：1234SELECT vend_name, prod_name, prod_priceFORM vendors, productsWHERE vendors.vend_id = products.vend_idORDER BY vend_name, prod_name; 得到:    vend_name prod_name p">
-<meta name="keywords" content="MySQL">
+  <meta name="description" content="什么是栈栈(stack)是一种动态集合，实现的是一种后进先出(last-in, first-out, LIFO)的策略。 栈的PUSH和POP栈上的INSERT操作被称为压入(PUSH)，而无元素参数的DELETE操作称为弹出(POP)。">
+<meta name="keywords" content="数据结构,栈">
 <meta property="og:type" content="article">
-<meta property="og:title" content="mysql联结表(一)">
-<meta property="og:url" content="http://heyforyou.com/2017/09/22/undefined.html">
+<meta property="og:title" content="简单用PHP理解栈的PUSH和POP">
+<meta property="og:url" content="http://heyforyou.com/2017/09/24/20170924134245.html">
 <meta property="og:site_name" content="LHC生活技术宅">
-<meta property="og:description" content="创建联结联结的创建非常简单，规定要联结的所有表以及它们如何关联即可。如：1234SELECT vend_name, prod_name, prod_priceFORM vendors, productsWHERE vendors.vend_id = products.vend_idORDER BY vend_name, prod_name; 得到:    vend_name prod_name p">
-<meta property="og:updated_time" content="2018-02-26T03:44:41.386Z">
+<meta property="og:description" content="什么是栈栈(stack)是一种动态集合，实现的是一种后进先出(last-in, first-out, LIFO)的策略。 栈的PUSH和POP栈上的INSERT操作被称为压入(PUSH)，而无元素参数的DELETE操作称为弹出(POP)。">
+<meta property="og:image" content="http://owq1mzbaq.bkt.clouddn.com/%E6%A0%88-stack.png">
+<meta property="og:updated_time" content="2018-02-26T03:44:41.389Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="mysql联结表(一)">
-<meta name="twitter:description" content="创建联结联结的创建非常简单，规定要联结的所有表以及它们如何关联即可。如：1234SELECT vend_name, prod_name, prod_priceFORM vendors, productsWHERE vendors.vend_id = products.vend_idORDER BY vend_name, prod_name; 得到:    vend_name prod_name p">
+<meta name="twitter:title" content="简单用PHP理解栈的PUSH和POP">
+<meta name="twitter:description" content="什么是栈栈(stack)是一种动态集合，实现的是一种后进先出(last-in, first-out, LIFO)的策略。 栈的PUSH和POP栈上的INSERT操作被称为压入(PUSH)，而无元素参数的DELETE操作称为弹出(POP)。">
+<meta name="twitter:image" content="http://owq1mzbaq.bkt.clouddn.com/%E6%A0%88-stack.png">
   
     <link rel="alternative" href="/atom.xml" title="LHC生活技术宅" type="application/atom+xml">
   
@@ -150,57 +152,32 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-mysql联结表-一" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-简单用PHP理解栈的push和pop" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      mysql联结表(一)
+      简单用PHP理解栈的PUSH和POP
     </h1>
   
 
         
-        <a href="/2017/09/22/undefined.html" class="archive-article-date">
-  	<time datetime="2017-09-22T13:56:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-22</time>
+        <a href="/2017/09/24/20170924134245.html" class="archive-article-date">
+  	<time datetime="2017-09-24T05:42:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-24</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>创建联结<br>联结的创建非常简单，规定要联结的所有表以及它们如何关联即可。<br>如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">SELECT vend_name, prod_name, prod_price</div><div class="line">FORM vendors, products</div><div class="line">WHERE vendors.vend_id = products.vend_id</div><div class="line">ORDER BY vend_name, prod_name;</div></pre></td></tr></table></figure></p>
-<p>得到:</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">vend_name</th>
-<th style="text-align:center">prod_name</th>
-<th style="text-align:center">prod_price</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">ACME</td>
-<td style="text-align:center">Bird seed</td>
-<td style="text-align:center">10.00</td>
-</tr>
-<tr>
-<td style="text-align:center">ACME</td>
-<td style="text-align:center">Carrots</td>
-<td style="text-align:center">2.50</td>
-</tr>
-<tr>
-<td style="text-align:center">Anvils</td>
-<td style="text-align:center">1 ton anvil</td>
-<td style="text-align:center">14.99</td>
-</tr>
-</tbody>
-</table>
+        <h3 id="什么是栈"><a href="#什么是栈" class="headerlink" title="什么是栈"></a>什么是栈</h3><p><code>栈</code>(stack)是一种<code>动态集合</code>，实现的是一种<code>后进先出</code>(last-in, first-out, LIFO)的策略。</p>
+<h3 id="栈的PUSH和POP"><a href="#栈的PUSH和POP" class="headerlink" title="栈的PUSH和POP"></a>栈的PUSH和POP</h3><p>栈上的<code>INSERT</code>操作被称为<code>压入</code>(PUSH)，而无元素参数的<code>DELETE</code>操作称为<code>弹出</code>(POP)。</p>
 <a id="more"></a>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">分析：</div><div class="line">SELECT 语句与平时的语句一样指定要检索的列。这里最大的差别是所有指定的两个列(prod_name和prod_price) 在一个表中，而另一个列(vend_name) 则在另一个表中。</div><div class="line">现在来看FROM子句。与平时的SELECT语句不一样，这条语句的FROM从句列出了两个表，分别是vendors和products。</div><div class="line">它们就是这条SELECT语句联结的两个表的名字。</div><div class="line">最后，这两个表用WHERE子句正确联结，WHERE子句指示MYSQL匹配venders表中的vend_id和products表中的vend_id。</div><div class="line">注意：不要忘记WHERE子句</div><div class="line">应该保证所有联结都有WHERE子句，否则MYSQL将返回比想要的数据多得多的数据。同理，应该保证WHERE子句的正确性。不正确的过滤条件将导致MYSQL返回不正确的数据。</div></pre></td></tr></table></figure>
-<p>摘自文献<a href="https://baike.baidu.com/item/MySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A/6819509?fr=aladdin" target="_blank" rel="noopener">Mysql必知必会</a></p>
+<h3 id="举个栗子"><a href="#举个栗子" class="headerlink" title="举个栗子"></a>举个栗子</h3><p>我们生活中常见到的发传单，假设我去发传单，我把传单拿在手上。<br>我发出去的时候是从上往下发，发的差不多了，监工看到我手里的传单不多，<br>把另外一叠传单放到到我剩下的传单上面(后进)，于是我继续从上往下发(先出)。<br>在最上面的就是先发出去的。</p>
+<h3 id="PHP代码实现"><a href="#PHP代码实现" class="headerlink" title="PHP代码实现"></a>PHP代码实现</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div></pre></td><td class="code"><pre><div class="line">&lt;?php</div><div class="line">// 栈压入</div><div class="line">function stack_push($array, $value)</div><div class="line">&#123;</div><div class="line">	$max = get_max_key($array);</div><div class="line">	$max = $max + 1;</div><div class="line">	$array[$max] = $value;</div><div class="line">	return $array;</div><div class="line">&#125;</div><div class="line"></div><div class="line">// 栈弹出</div><div class="line">function stack_pop($array)</div><div class="line">&#123;</div><div class="line">	$max = get_max_key($array);</div><div class="line">	if(check_is_empty_stack($max))&#123;</div><div class="line">		return &apos;Error, underflow&apos;; // 栈下溢</div><div class="line">	&#125;</div><div class="line">	unset($array[$max]);</div><div class="line">	return $array;</div><div class="line">&#125;</div><div class="line"></div><div class="line">// 检测是否为空栈</div><div class="line">function check_is_empty_stack($value)</div><div class="line">&#123;</div><div class="line">	if ($value == 0) &#123;</div><div class="line">		return true;</div><div class="line">	&#125;</div><div class="line">	return false;</div><div class="line">&#125;</div><div class="line"></div><div class="line">// 获取最大的key</div><div class="line">function get_max_key($arr)</div><div class="line">&#123;</div><div class="line">	$max_key = 0;</div><div class="line">	foreach ($arr as $key =&gt; $value) &#123;</div><div class="line">		if ($key &gt; $max_key) &#123;</div><div class="line">			$max_key = $key;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	return $max_key;</div><div class="line">&#125;</div><div class="line"></div><div class="line">$testArr = array(1, 23, &apos;24324&apos; =&gt; 2324, &apos;424&apos; =&gt; 234234);</div><div class="line">var_dump(&apos;测试数据&apos;, $testArr);</div><div class="line"></div><div class="line">// 压入一个</div><div class="line">$result = stack_push($testArr, 8);</div><div class="line">var_dump(&apos;压入一个&apos;, $result);</div><div class="line"></div><div class="line">// 再压入一个</div><div class="line">$result = stack_push($result, &apos;test&apos;);</div><div class="line">var_dump(&apos;再压入一个&apos;, $result);</div><div class="line"></div><div class="line">// 弹出一个</div><div class="line">$result = stack_pop($result);</div><div class="line">var_dump(&apos;弹出一个: &apos;, $result);</div><div class="line"></div><div class="line">//再弹出一个</div><div class="line">$result = stack_pop($result);</div><div class="line">var_dump(&apos;再弹出一个: &apos;, $result);</div><div class="line"></div><div class="line">//再弹出一个</div><div class="line">$result = stack_pop($result);</div><div class="line">var_dump(&apos;再弹出一个: &apos;, $result);</div></pre></td></tr></table></figure>
+<h3 id="打印的结果为"><a href="#打印的结果为" class="headerlink" title="打印的结果为"></a>打印的结果为</h3><p><img src="http://owq1mzbaq.bkt.clouddn.com/%E6%A0%88-stack.png" alt="栈结果打印"></p>
 
       
 
@@ -214,7 +191,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">MySQL</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">数据结构</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">栈</a>
         		</li>
       		
 		</ul>
@@ -270,7 +251,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=http://heyforyou.com/2017/09/22/undefined.html" alt="微信分享二维码">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://heyforyou.com/2017/09/24/20170924134245.html" alt="微信分享二维码">
     </div>
 </div>
 
@@ -284,18 +265,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2017/09/22/undefined.html" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2017/09/24/20170924143252.html" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          mysql联结表(二)
+          简单用PHP理解队列的ENQUEUE和DEQUEUE
         
       </div>
     </a>
   
   
-    <a href="/2017/09/20/undefined.html" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">从输入URL到页面加载完成的过程中都发生了什么事情？</div>
+    <a href="/2017/09/23/20170923144327.html" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">如何在Ubuntu 16.04搭建Shadowsocks</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -500,15 +481,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">记生活</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">栈</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">记生活</a>
               </li>
              
               <li class="article-tag-list-item">

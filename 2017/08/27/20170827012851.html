@@ -6,29 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://heyforyou.com">
-  <title>由一个 Linux 命令引发的英语语法思考 | LHC生活技术宅</title>
+  <title>阿里云Ubuntu安装LNMP环境之PHP7 | LHC生活技术宅</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="曾几何时，自视英语不错的自己，在战五渣面前，被啪啪的这么响故事，从一个 who i am 还是 who am i 说起。。。">
-<meta name="keywords" content="记生活">
+  <meta name="description" content="在QQ群很多朋友问阿里云服务器怎么安装LNMP环境，怎么把项目放到服务器上面去，在这里，我就从头开始教大家怎么在阿里云服务器安装LNMP环境。在这之前，我们先要知道什么是LNMP。L: 表示的是Linux系统, 包括Ubuntu、Centos但不限于以上两种的系统版本。N: 表示的是Nginx,这是一个高性能的HTTP和反向代理服务器，也是一个IMAP/POP3/SMTP代理服务器。M: 表示的是">
+<meta name="keywords" content="PHP">
 <meta property="og:type" content="article">
-<meta property="og:title" content="由一个 Linux 命令引发的英语语法思考">
-<meta property="og:url" content="http://heyforyou.com/2018/01/26/undefined.html">
+<meta property="og:title" content="阿里云Ubuntu安装LNMP环境之PHP7">
+<meta property="og:url" content="http://heyforyou.com/2017/08/27/20170827012851.html">
 <meta property="og:site_name" content="LHC生活技术宅">
-<meta property="og:description" content="曾几何时，自视英语不错的自己，在战五渣面前，被啪啪的这么响故事，从一个 who i am 还是 who am i 说起。。。">
-<meta property="og:image" content="http://heyforyou.com/assets/images/posts/yufasikao_1.png">
-<meta property="og:image" content="http://heyforyou.com/assets/images/posts/yufasikao_2.png">
-<meta property="og:image" content="http://heyforyou.com/assets/images/posts/yufasikao_3.png">
-<meta property="og:image" content="http://heyforyou.com/assets/images/posts/yufasikao_4.png">
-<meta property="og:image" content="http://heyforyou.com/assets/images/posts/yufasikao_5.png">
-<meta property="og:image" content="http://heyforyou.com/assets/images/posts/yufasikao_6.png">
-<meta property="og:image" content="http://heyforyou.com/assets/images/posts/yufasikao_7.png">
-<meta property="og:image" content="http://heyforyou.com/assets/images/posts/yufasikao_8.png">
-<meta property="og:image" content="http://heyforyou.com/assets/images/posts/yufasikao_9.png">
-<meta property="og:updated_time" content="2018-02-26T03:44:41.389Z">
+<meta property="og:description" content="在QQ群很多朋友问阿里云服务器怎么安装LNMP环境，怎么把项目放到服务器上面去，在这里，我就从头开始教大家怎么在阿里云服务器安装LNMP环境。在这之前，我们先要知道什么是LNMP。L: 表示的是Linux系统, 包括Ubuntu、Centos但不限于以上两种的系统版本。N: 表示的是Nginx,这是一个高性能的HTTP和反向代理服务器，也是一个IMAP/POP3/SMTP代理服务器。M: 表示的是">
+<meta property="og:updated_time" content="2018-02-26T03:44:41.391Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="由一个 Linux 命令引发的英语语法思考">
-<meta name="twitter:description" content="曾几何时，自视英语不错的自己，在战五渣面前，被啪啪的这么响故事，从一个 who i am 还是 who am i 说起。。。">
-<meta name="twitter:image" content="http://heyforyou.com/assets/images/posts/yufasikao_1.png">
+<meta name="twitter:title" content="阿里云Ubuntu安装LNMP环境之PHP7">
+<meta name="twitter:description" content="在QQ群很多朋友问阿里云服务器怎么安装LNMP环境，怎么把项目放到服务器上面去，在这里，我就从头开始教大家怎么在阿里云服务器安装LNMP环境。在这之前，我们先要知道什么是LNMP。L: 表示的是Linux系统, 包括Ubuntu、Centos但不限于以上两种的系统版本。N: 表示的是Nginx,这是一个高性能的HTTP和反向代理服务器，也是一个IMAP/POP3/SMTP代理服务器。M: 表示的是">
   
     <link rel="alternative" href="/atom.xml" title="LHC生活技术宅" type="application/atom+xml">
   
@@ -160,51 +150,41 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-由一个 Linux 命令引发的英语语法思考" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-阿里云Ubuntu安装LNMP环境之PHP7" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      由一个 Linux 命令引发的英语语法思考
+      阿里云Ubuntu安装LNMP环境之PHP7
     </h1>
   
 
         
-        <a href="/2018/01/26/undefined.html" class="archive-article-date">
-  	<time datetime="2018-01-26T07:17:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-26</time>
+        <a href="/2017/08/27/20170827012851.html" class="archive-article-date">
+  	<time datetime="2017-08-26T17:28:51.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-27</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <blockquote>
-<p>曾几何时，自视英语不错的自己，在战五渣面前，被啪啪的这么响<br>故事，从一个 who i am 还是 who am i 说起。。。</p>
-</blockquote>
-<a id="more"></a>
-<p>南街浊酒 14:40:15<br><img src="/assets/images/posts/yufasikao_1.png" alt=""><br>这个单词不应该是 who i am 吗</p>
-<p>苏州酱鸭  14:41:08<br>为啥是who i am</p>
-<p>苏州酱鸭  14:41:21<br>那 who are you是不是who you are</p>
-<p>苏州酱鸭  14:41:40<br>is am are是be动词</p>
-<p>苏州酱鸭  14:42:11<br>在这种疑问句的情况下 要放到 me you she/he/it前面的</p>
-<p>南街浊酒  14:42:11<br>😂 我一直以为我是谁是  who i am<br><img src="/assets/images/posts/yufasikao_2.png" alt=""></p>
-<p>苏州酱鸭  14:42:53<br>百度的翻译是按单词翻译</p>
-<p>南街浊酒  14:42:55<br><img src="/assets/images/posts/yufasikao_3.png" alt=""></p>
-<p>苏州酱鸭  14:43:04<br><img src="/assets/images/posts/yufasikao_4.png" alt=""></p>
-<p>南街浊酒  14:43:24<br><img src="/assets/images/posts/yufasikao_5.png" alt=""></p>
-<p>南街浊酒  14:44:11<br><img src="/assets/images/posts/yufasikao_6.png" alt=""></p>
-<p>苏州酱鸭  14:44:35<br><img src="/assets/images/posts/yufasikao_7.png" alt=""></p>
-<p>苏州酱鸭  14:45:01<br>如果 how do等放在前面</p>
-<p>苏州酱鸭  14:45:10<br>则倒装一下</p>
-<p>青涩的山楂花  14:45:13<br><img src="/assets/images/posts/yufasikao_8.png" alt=""></p>
-<p>苏州酱鸭  14:45:31<br>此时who做倒装</p>
-<p>苏州酱鸭  14:45:40<br>就不会有问题</p>
-<p>苏州酱鸭  14:45:49<br>所以单独用 who am i</p>
-<p>苏州酱鸭  14:45:57<br>和其他混用 who i am</p>
-<p>青涩的山楂花  14:46:14<br><img src="/assets/images/posts/yufasikao_9.png" alt=""></p>
-<p>青涩的山楂花  14:47:23<br>标题，由一个Linux命令引发的英语语法思考</p>
+        <p>在QQ群很多朋友问阿里云服务器怎么安装LNMP环境，怎么把项目放到服务器上面去，在这里，我就从头开始教大家怎么在阿里云服务器安装LNMP环境。<br>在这之前，我们先要知道什么是LNMP。<br>L: 表示的是Linux系统, 包括Ubuntu、Centos但不限于以上两种的系统版本。<br>N: 表示的是Nginx,这是一个高性能的HTTP和反向代理服务器，也是一个IMAP/POP3/SMTP代理服务器。<br>M: 表示的是Mysql,Mysql是一个小型关系型数据库管理系统。<br>P: 表示的是PHP,PHP是一种在服务器端执行的嵌入HTML文档的脚本语言。<br><a id="more"></a></p>
+<p>安装PHP7前, 首先我们要添加PHP的仓库。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ apt install -y software-properties-common</div><div class="line">$ add-apt-repository ppa:ondrej/php</div><div class="line">$ sudo apt-get update  //更新包管理</div></pre></td></tr></table></figure></p>
+<p>更新完之后, 我们需要安装PHP7以及需要用到的一些模块:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ apt install -y php7.0 php7.0-mysql php7.0-fpm php7.0-curl php7.0-xml php7.0-mcrypt php7.0-json php7.0-gd php7.0-mbstring php7.0-zip php-mongodb php-memcached php-redis</div></pre></td></tr></table></figure></p>
+<p>安装完成之后, 查看一下PHP版本:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">$ php -v</div><div class="line">PHP 7.0.22-2+ubuntu16.04.1+deb.sury.org+4 (cli) (built: Aug  4 2017 13:04:09) ( NTS )</div><div class="line">Copyright (c) 1997-2017 The PHP Group</div><div class="line">Zend Engine v3.0.0, Copyright (c) 1998-2017 Zend Technologies</div><div class="line">    with Zend OPcache v7.0.22-2+ubuntu16.04.1+deb.sury.org+4, Copyright (c) 1999-2017, by Zend Technologies</div></pre></td></tr></table></figure></p>
+<p>紧接着我们需要改下我们的php.ini里面的cgi.fix_pathinfo<a href="http://www.laruence.com/2010/05/20/1495.html" target="_blank" rel="noopener">至于为什么, 参考博客</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ vim /etc/php/7.0/fpm/php.ini</div><div class="line">#cgi.fix_pathinfo=1  //把#去掉, 并且把值从1改为0</div></pre></td></tr></table></figure></p>
+<p>修改php-fpm配置<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ vim /etc/php/7.0/fpm/pool.d/www.conf</div><div class="line">listen = /run/php/php7.0-fpm.sock // 改为listen = /var/run/php/php7.0-fpm.sock</div></pre></td></tr></table></figure></p>
+<p>改完php-fpm后, 我们需要改一下nginx的配置。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ vim /etc/nginx/sites-enabled/default</div><div class="line">root /var/www/html; //这个是网站的根目录, 根据自己的实际情况来改动</div><div class="line">index index.html index.htm index.nginx-debian.html; //这个是索引, 如果是要运行.php文件 则要添加index.php在index后台, 改完为index index.php index.html index.htm index.nginx-debian.html;</div></pre></td></tr></table></figure></p>
+<p>因为nginx本身会把<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">#location ~ \.php$ &#123;</div><div class="line">#       include snippets/fastcgi-php.conf;</div><div class="line">#</div><div class="line">#       # With php7.0-cgi alone:</div><div class="line">#       fastcgi_pass 127.0.0.1:9000;</div><div class="line">#       # With php7.0-fpm:</div><div class="line">#       fastcgi_pass unix:/run/php/php7.0-fpm.sock;</div><div class="line">#&#125;</div></pre></td></tr></table></figure></p>
+<p>注释掉, 所以我们就不动它, 重新加一个也可以:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">location ~ \.php$ &#123;</div><div class="line">    fastcgi_split_path_info ^(.+\.php)(/.+)$;</div><div class="line">    fastcgi_pass unix:/var/run/php/php7.0-fpm.sock;</div><div class="line">    fastcgi_index index.php;</div><div class="line">    fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;</div><div class="line">    include fastcgi_params;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>接着我们启动php-fpm:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">service php7.0-fpm start</div></pre></td></tr></table></figure></p>
+<p>因为nginx配置已经改过, 所以我们需要重启nginx:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">service nginx reload</div></pre></td></tr></table></figure></p>
+<p>测试是否能正常访问php文件, 我们在默认的根目录下面新建一个index.php文件:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ vim /var/www/html/index.php</div></pre></td></tr></table></figure></p>
+<p>文件里面输出下php信息就可以了, 如:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&lt;?php</div><div class="line">phpinfo();</div></pre></td></tr></table></figure></p>
+<p>按esc调出底线命令, 输入:wq 保存文件并退出, 通过浏览器访问: IP地址/index.php, 如果输出有PHP信息则证明已经安装完毕.</p>
+<p>PHP-HTML5学习交流群:<br>QQ一群群号: 476614753<br>QQ二群群号: 577094233</p>
 
       
 
@@ -218,7 +198,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">记生活</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">PHP</a>
         		</li>
       		
 		</ul>
@@ -274,7 +254,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=http://heyforyou.com/2018/01/26/undefined.html" alt="微信分享二维码">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://heyforyou.com/2017/08/27/20170827012851.html" alt="微信分享二维码">
     </div>
 </div>
 
@@ -288,9 +268,18 @@
   
 <nav id="article-nav">
   
+    <a href="/2017/08/27/20170827020351.html" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          记录日常
+        
+      </div>
+    </a>
   
-    <a href="/2018/01/25/undefined.html" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Hexo 修改 URL 为文章发表时间格式</div>
+  
+    <a href="/2017/08/27/20170827000140.html" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">阿里云Ubuntu安装LNMP环境之Mysql</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -495,15 +484,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">记生活</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">栈</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">记生活</a>
               </li>
              
               <li class="article-tag-list-item">

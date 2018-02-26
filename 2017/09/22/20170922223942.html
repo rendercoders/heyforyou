@@ -6,21 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://heyforyou.com">
-  <title>简单用PHP理解栈的PUSH和POP | LHC生活技术宅</title>
+  <title>mysql联结表随笔 | LHC生活技术宅</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="什么是栈栈(stack)是一种动态集合，实现的是一种后进先出(last-in, first-out, LIFO)的策略。 栈的PUSH和POP栈上的INSERT操作被称为压入(PUSH)，而无元素参数的DELETE操作称为弹出(POP)。">
-<meta name="keywords" content="数据结构,栈">
+  <meta name="description" content="由于业务的复杂度，我们在查询数据的时候往往是多个表一起查询，但是这样联结多个数据表，是非常消耗资源的。因此，在项目中，我们一般在进行多表联结的时候，往往要考虑数据表的数据量。在数据量多的表，最好是一个个表去查询，利用主表的主键去联结从表的外键。这样虽然多写了一些代码，但是保证了性能的提升。">
+<meta name="keywords" content="MySQL">
 <meta property="og:type" content="article">
-<meta property="og:title" content="简单用PHP理解栈的PUSH和POP">
-<meta property="og:url" content="http://heyforyou.com/2017/09/24/undefined.html">
+<meta property="og:title" content="mysql联结表随笔">
+<meta property="og:url" content="http://heyforyou.com/2017/09/22/20170922223942.html">
 <meta property="og:site_name" content="LHC生活技术宅">
-<meta property="og:description" content="什么是栈栈(stack)是一种动态集合，实现的是一种后进先出(last-in, first-out, LIFO)的策略。 栈的PUSH和POP栈上的INSERT操作被称为压入(PUSH)，而无元素参数的DELETE操作称为弹出(POP)。">
-<meta property="og:image" content="http://owq1mzbaq.bkt.clouddn.com/%E6%A0%88-stack.png">
-<meta property="og:updated_time" content="2018-02-26T03:44:41.389Z">
+<meta property="og:description" content="由于业务的复杂度，我们在查询数据的时候往往是多个表一起查询，但是这样联结多个数据表，是非常消耗资源的。因此，在项目中，我们一般在进行多表联结的时候，往往要考虑数据表的数据量。在数据量多的表，最好是一个个表去查询，利用主表的主键去联结从表的外键。这样虽然多写了一些代码，但是保证了性能的提升。">
+<meta property="og:updated_time" content="2018-02-26T03:44:41.386Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="简单用PHP理解栈的PUSH和POP">
-<meta name="twitter:description" content="什么是栈栈(stack)是一种动态集合，实现的是一种后进先出(last-in, first-out, LIFO)的策略。 栈的PUSH和POP栈上的INSERT操作被称为压入(PUSH)，而无元素参数的DELETE操作称为弹出(POP)。">
-<meta name="twitter:image" content="http://owq1mzbaq.bkt.clouddn.com/%E6%A0%88-stack.png">
+<meta name="twitter:title" content="mysql联结表随笔">
+<meta name="twitter:description" content="由于业务的复杂度，我们在查询数据的时候往往是多个表一起查询，但是这样联结多个数据表，是非常消耗资源的。因此，在项目中，我们一般在进行多表联结的时候，往往要考虑数据表的数据量。在数据量多的表，最好是一个个表去查询，利用主表的主键去联结从表的外键。这样虽然多写了一些代码，但是保证了性能的提升。">
   
     <link rel="alternative" href="/atom.xml" title="LHC生活技术宅" type="application/atom+xml">
   
@@ -152,32 +150,27 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-简单用PHP理解栈的push和pop" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-mysql联结表随笔" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      简单用PHP理解栈的PUSH和POP
+      mysql联结表随笔
     </h1>
   
 
         
-        <a href="/2017/09/24/undefined.html" class="archive-article-date">
-  	<time datetime="2017-09-24T05:42:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-24</time>
+        <a href="/2017/09/22/20170922223942.html" class="archive-article-date">
+  	<time datetime="2017-09-22T14:39:42.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-22</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="什么是栈"><a href="#什么是栈" class="headerlink" title="什么是栈"></a>什么是栈</h3><p><code>栈</code>(stack)是一种<code>动态集合</code>，实现的是一种<code>后进先出</code>(last-in, first-out, LIFO)的策略。</p>
-<h3 id="栈的PUSH和POP"><a href="#栈的PUSH和POP" class="headerlink" title="栈的PUSH和POP"></a>栈的PUSH和POP</h3><p>栈上的<code>INSERT</code>操作被称为<code>压入</code>(PUSH)，而无元素参数的<code>DELETE</code>操作称为<code>弹出</code>(POP)。</p>
-<a id="more"></a>
-<h3 id="举个栗子"><a href="#举个栗子" class="headerlink" title="举个栗子"></a>举个栗子</h3><p>我们生活中常见到的发传单，假设我去发传单，我把传单拿在手上。<br>我发出去的时候是从上往下发，发的差不多了，监工看到我手里的传单不多，<br>把另外一叠传单放到到我剩下的传单上面(后进)，于是我继续从上往下发(先出)。<br>在最上面的就是先发出去的。</p>
-<h3 id="PHP代码实现"><a href="#PHP代码实现" class="headerlink" title="PHP代码实现"></a>PHP代码实现</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div></pre></td><td class="code"><pre><div class="line">&lt;?php</div><div class="line">// 栈压入</div><div class="line">function stack_push($array, $value)</div><div class="line">&#123;</div><div class="line">	$max = get_max_key($array);</div><div class="line">	$max = $max + 1;</div><div class="line">	$array[$max] = $value;</div><div class="line">	return $array;</div><div class="line">&#125;</div><div class="line"></div><div class="line">// 栈弹出</div><div class="line">function stack_pop($array)</div><div class="line">&#123;</div><div class="line">	$max = get_max_key($array);</div><div class="line">	if(check_is_empty_stack($max))&#123;</div><div class="line">		return &apos;Error, underflow&apos;; // 栈下溢</div><div class="line">	&#125;</div><div class="line">	unset($array[$max]);</div><div class="line">	return $array;</div><div class="line">&#125;</div><div class="line"></div><div class="line">// 检测是否为空栈</div><div class="line">function check_is_empty_stack($value)</div><div class="line">&#123;</div><div class="line">	if ($value == 0) &#123;</div><div class="line">		return true;</div><div class="line">	&#125;</div><div class="line">	return false;</div><div class="line">&#125;</div><div class="line"></div><div class="line">// 获取最大的key</div><div class="line">function get_max_key($arr)</div><div class="line">&#123;</div><div class="line">	$max_key = 0;</div><div class="line">	foreach ($arr as $key =&gt; $value) &#123;</div><div class="line">		if ($key &gt; $max_key) &#123;</div><div class="line">			$max_key = $key;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	return $max_key;</div><div class="line">&#125;</div><div class="line"></div><div class="line">$testArr = array(1, 23, &apos;24324&apos; =&gt; 2324, &apos;424&apos; =&gt; 234234);</div><div class="line">var_dump(&apos;测试数据&apos;, $testArr);</div><div class="line"></div><div class="line">// 压入一个</div><div class="line">$result = stack_push($testArr, 8);</div><div class="line">var_dump(&apos;压入一个&apos;, $result);</div><div class="line"></div><div class="line">// 再压入一个</div><div class="line">$result = stack_push($result, &apos;test&apos;);</div><div class="line">var_dump(&apos;再压入一个&apos;, $result);</div><div class="line"></div><div class="line">// 弹出一个</div><div class="line">$result = stack_pop($result);</div><div class="line">var_dump(&apos;弹出一个: &apos;, $result);</div><div class="line"></div><div class="line">//再弹出一个</div><div class="line">$result = stack_pop($result);</div><div class="line">var_dump(&apos;再弹出一个: &apos;, $result);</div><div class="line"></div><div class="line">//再弹出一个</div><div class="line">$result = stack_pop($result);</div><div class="line">var_dump(&apos;再弹出一个: &apos;, $result);</div></pre></td></tr></table></figure>
-<h3 id="打印的结果为"><a href="#打印的结果为" class="headerlink" title="打印的结果为"></a>打印的结果为</h3><p><img src="http://owq1mzbaq.bkt.clouddn.com/%E6%A0%88-stack.png" alt="栈结果打印"></p>
+        <p>由于业务的复杂度，我们在查询数据的时候往往是多个表一起查询，但是这样联结多个数据表，是非常消耗资源的。因此，在项目中，我们一般在进行多表联结的时候，往往要考虑数据表的数据量。在数据量多的表，最好是一个个表去查询，利用主表的主键去联结从表的外键。这样虽然多写了一些代码，但是保证了性能的提升。</p>
 
       
 
@@ -191,11 +184,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">数据结构</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">栈</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">MySQL</a>
         		</li>
       		
 		</ul>
@@ -251,7 +240,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=http://heyforyou.com/2017/09/24/undefined.html" alt="微信分享二维码">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://heyforyou.com/2017/09/22/20170922223942.html" alt="微信分享二维码">
     </div>
 </div>
 
@@ -265,18 +254,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2017/09/24/undefined.html" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2017/09/22/20170922232412.html" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          简单用PHP理解队列的ENQUEUE和DEQUEUE
+          感悟
         
       </div>
     </a>
   
   
-    <a href="/2017/09/23/undefined.html" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">如何在Ubuntu 16.04搭建Shadowsocks</div>
+    <a href="/2017/09/22/20170922222259.html" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">mysql联结表(二)</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -481,15 +470,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">记生活</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">栈</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">记生活</a>
               </li>
              
               <li class="article-tag-list-item">

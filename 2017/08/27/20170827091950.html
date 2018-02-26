@@ -6,19 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://heyforyou.com">
-  <title>快速排序 | LHC生活技术宅</title>
+  <title>阿里云Ubuntu安装Composer和中国镜像 | LHC生活技术宅</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="排序算法有很多，桶排序、冒泡排序、快速排序、计数排序、基数排序、插入排序、归并排序和堆排序等等。详细理解先空着，先给出例子。等理解深了再来补充。">
-<meta name="keywords" content="算法">
+  <meta name="description" content="引用: Composer是PHP用来管理依赖（dependency）关系的工具。你可以在自己的项目中声明所依赖的外部工具库（libraries），Composer 会帮你安装这些依赖的库文件。PHP使用composer的地方越来越多, 接下来我就教大家如果在阿里云上面安装composer并且改为中国镜像。">
+<meta name="keywords" content="PHP,Composer">
 <meta property="og:type" content="article">
-<meta property="og:title" content="快速排序">
-<meta property="og:url" content="http://heyforyou.com/2017/09/19/undefined.html">
+<meta property="og:title" content="阿里云Ubuntu安装Composer和中国镜像">
+<meta property="og:url" content="http://heyforyou.com/2017/08/27/20170827091950.html">
 <meta property="og:site_name" content="LHC生活技术宅">
-<meta property="og:description" content="排序算法有很多，桶排序、冒泡排序、快速排序、计数排序、基数排序、插入排序、归并排序和堆排序等等。详细理解先空着，先给出例子。等理解深了再来补充。">
-<meta property="og:updated_time" content="2018-02-26T03:44:41.388Z">
+<meta property="og:description" content="引用: Composer是PHP用来管理依赖（dependency）关系的工具。你可以在自己的项目中声明所依赖的外部工具库（libraries），Composer 会帮你安装这些依赖的库文件。PHP使用composer的地方越来越多, 接下来我就教大家如果在阿里云上面安装composer并且改为中国镜像。">
+<meta property="og:updated_time" content="2018-02-26T03:44:41.390Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="快速排序">
-<meta name="twitter:description" content="排序算法有很多，桶排序、冒泡排序、快速排序、计数排序、基数排序、插入排序、归并排序和堆排序等等。详细理解先空着，先给出例子。等理解深了再来补充。">
+<meta name="twitter:title" content="阿里云Ubuntu安装Composer和中国镜像">
+<meta name="twitter:description" content="引用: Composer是PHP用来管理依赖（dependency）关系的工具。你可以在自己的项目中声明所依赖的外部工具库（libraries），Composer 会帮你安装这些依赖的库文件。PHP使用composer的地方越来越多, 接下来我就教大家如果在阿里云上面安装composer并且改为中国镜像。">
   
     <link rel="alternative" href="/atom.xml" title="LHC生活技术宅" type="application/atom+xml">
   
@@ -150,27 +150,33 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-快速排序" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-阿里云Ubuntu安装Composer和中国镜像" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      快速排序
+      阿里云Ubuntu安装Composer和中国镜像
     </h1>
   
 
         
-        <a href="/2017/09/19/undefined.html" class="archive-article-date">
-  	<time datetime="2017-09-18T17:21:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-19</time>
+        <a href="/2017/08/27/20170827091950.html" class="archive-article-date">
+  	<time datetime="2017-08-27T01:19:50.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-27</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>排序算法有很多，桶排序、冒泡排序、快速排序、计数排序、基数排序、插入排序、归并排序和堆排序等等。<br>详细理解先空着，先给出例子。等理解深了再来补充。<br><a id="more"></a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div></pre></td><td class="code"><pre><div class="line">// 快速排序</div><div class="line">// 原理: 每次排序的时候设置一个基准数，将小于等于基准点的数全部放到基准点的左边，将大于等于基准点的数全部放到基准点的右边。</div><div class="line">// 其实快速排序是基于一种叫做“二分”的思想。</div><div class="line">function quickSort($arr)</div><div class="line">&#123;</div><div class="line">    // 如果非数组  返回false</div><div class="line">    if (!is_array($arr)) &#123;</div><div class="line">        return false;</div><div class="line">    &#125;</div><div class="line">    $len = count($arr);</div><div class="line">    // 如果数组只有一位数  则返回当前数组</div><div class="line">    if ($len &lt;= 1) &#123;</div><div class="line">        return $arr;</div><div class="line">    &#125;</div><div class="line">    // 基准数</div><div class="line">    $baseNum = $arr[0];</div><div class="line">    // 创建两个空数组  分别装左右两边的数值</div><div class="line">    $leftArr = $rightArr = [];</div><div class="line">    for ($i=1; $i &lt; $len; $i++) &#123;</div><div class="line">    	// 如果基准数大于当前值 则放在左边数组  反之右边</div><div class="line">        if ($baseNum &gt; $arr[$i]) &#123;</div><div class="line">            $leftArr[] = $arr[$i];</div><div class="line">        &#125; else &#123;</div><div class="line">            $rightArr[] = $arr[$i];</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    // 递归</div><div class="line">    $leftArr = quickSort($leftArr);</div><div class="line">    $rightArr =quickSort($rightArr);</div><div class="line">    // 合并数组并且返回</div><div class="line">    return array_merge($leftArr, array($baseNum), $rightArr);</div><div class="line">&#125;</div><div class="line"></div><div class="line">$arr = [123,12312,4,312,2352,3532,123,1231];</div><div class="line">var_dump(quickSort($arr));</div></pre></td></tr></table></figure></p>
+        <p>引用: Composer是PHP用来管理依赖（dependency）关系的工具。你可以在自己的项目中声明所依赖的外部工具库（libraries），Composer 会帮你安装这些依赖的库文件。<br>PHP使用composer的地方越来越多, 接下来我就教大家如果在阿里云上面安装composer并且改为中国镜像。<br><a id="more"></a><br>老规矩, 先连上服务器:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ ssh root@xxx.xxx.xx.xx</div></pre></td></tr></table></figure></p>
+<p>使用apt-get安装composer:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ apt install -y composer</div></pre></td></tr></table></figure></p>
+<p>安装完成后, 输入composer回车就能看到当前安装的composer的一些信息:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ composer</div></pre></td></tr></table></figure></p>
+<p>这个时候我们已经安装完成了, 但是由于composer的服务器是在国外, 所以我们使用composer的时候经常断掉或者需要拉取很久才能把代码拉取下来。<br>这个时候, 国人的智慧就体现出来了, 中国镜像就这样被开发出来了。 具体大家可以去<a href="https://pkg.phpcomposer.com/" target="_blank" rel="noopener">中国镜像</a> 看看。</p>
+<p>在这里因为经常使用composer, 所以我就只把全局配置的用法写出来就可以了。<br>很简洁的一句代码:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ composer config -g repo.packagist composer https://packagist.phpcomposer.com</div></pre></td></tr></table></figure></p>
+<p>回车, 马上就能享受飞一般的感觉。</p>
+<p>PHP-HTML5学习交流群:<br>QQ一群群号: 476614753<br>QQ二群群号: 577094233</p>
 
       
 
@@ -184,7 +190,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">算法</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">PHP</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Composer</a>
         		</li>
       		
 		</ul>
@@ -240,7 +250,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=http://heyforyou.com/2017/09/19/undefined.html" alt="微信分享二维码">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://heyforyou.com/2017/08/27/20170827091950.html" alt="微信分享二维码">
     </div>
 </div>
 
@@ -254,18 +264,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2017/09/20/undefined.html" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2017/09/05/20170905232327.html" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          从输入URL到页面加载完成的过程中都发生了什么事情？
+          git hook部署代码
         
       </div>
     </a>
   
   
-    <a href="/2017/09/18/undefined.html" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">冒泡排序</div>
+    <a href="/2017/08/27/20170827020351.html" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">记录日常</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -470,15 +480,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">记生活</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">栈</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">记生活</a>
               </li>
              
               <li class="article-tag-list-item">

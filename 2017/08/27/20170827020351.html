@@ -6,19 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://heyforyou.com">
-  <title>git hook部署代码 | LHC生活技术宅</title>
+  <title>记录日常 | LHC生活技术宅</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="先空着，以后补充">
-<meta name="keywords" content="GIT">
+  <meta name="description" content="很多时候, 我们不常用到, 但是用到的时候又得去百度一下, 这里就集中去整理一下平时我需要到的一些命令及文件地址:  mysql启动/重启/关闭123service mysql startservice mysql restartservice mysql stop">
+<meta name="keywords" content="随笔,日常">
 <meta property="og:type" content="article">
-<meta property="og:title" content="git hook部署代码">
-<meta property="og:url" content="http://heyforyou.com/2017/09/05/undefined.html">
+<meta property="og:title" content="记录日常">
+<meta property="og:url" content="http://heyforyou.com/2017/08/27/20170827020351.html">
 <meta property="og:site_name" content="LHC生活技术宅">
-<meta property="og:description" content="先空着，以后补充">
-<meta property="og:updated_time" content="2018-02-26T03:44:41.385Z">
+<meta property="og:description" content="很多时候, 我们不常用到, 但是用到的时候又得去百度一下, 这里就集中去整理一下平时我需要到的一些命令及文件地址:  mysql启动/重启/关闭123service mysql startservice mysql restartservice mysql stop">
+<meta property="og:updated_time" content="2018-02-26T03:44:41.390Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="git hook部署代码">
-<meta name="twitter:description" content="先空着，以后补充">
+<meta name="twitter:title" content="记录日常">
+<meta name="twitter:description" content="很多时候, 我们不常用到, 但是用到的时候又得去百度一下, 这里就集中去整理一下平时我需要到的一些命令及文件地址:  mysql启动/重启/关闭123service mysql startservice mysql restartservice mysql stop">
   
     <link rel="alternative" href="/atom.xml" title="LHC生活技术宅" type="application/atom+xml">
   
@@ -150,27 +150,86 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-git-hook部署代码" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-记录常用" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      git hook部署代码
+      记录日常
     </h1>
   
 
         
-        <a href="/2017/09/05/undefined.html" class="archive-article-date">
-  	<time datetime="2017-09-05T15:23:27.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-05</time>
+        <a href="/2017/08/27/20170827020351.html" class="archive-article-date">
+  	<time datetime="2017-08-26T18:03:51.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-27</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>先空着，以后补充</p>
+        <p>很多时候, 我们不常用到, 但是用到的时候又得去百度一下, 这里就集中去整理一下平时我需要到的一些命令及文件地址:</p>
+<ul>
+<li>mysql启动/重启/关闭<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">service mysql start</div><div class="line">service mysql restart</div><div class="line">service mysql stop</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<a id="more"></a>
+<ul>
+<li><p>nginx启动/重启/关闭</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">service nginx start</div><div class="line">service nginx restart</div><div class="line">service nginx stop</div></pre></td></tr></table></figure>
+</li>
+<li><p>php7.0-fpm启动/重启/关闭</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">service php7.0-fpm start</div><div class="line">service php7.0-fpm restart</div><div class="line">service php7.0-fpm stop</div></pre></td></tr></table></figure>
+</li>
+<li><p>nginx配置</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">/etc/nginx/sites-enabled/default</div></pre></td></tr></table></figure>
+</li>
+<li><p>nginx错误日志</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">/var/log/nginx/error.log</div></pre></td></tr></table></figure>
+</li>
+<li><p>php.ini配置</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">/etc/php/7.0/fpm/php.ini</div></pre></td></tr></table></figure>
+</li>
+<li><p>mysqld.cnf配置</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">/etc/mysql/mysql.conf.d/mysqld.cnf</div></pre></td></tr></table></figure>
+</li>
+<li><p>mysql设置外网访问</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">GRANT ALL PRIVILEGES ON *.* TO &apos;账号名称&apos;@&apos;%&apos; IDENTIFIED BY &apos;密码&apos; WITH GRANT OPTION;</div><div class="line">FLUSH PRIVILEGES; //刷新权限</div></pre></td></tr></table></figure>
+</li>
+<li><p>ssh连接取消密码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ssh-add ~/.ssh/id_rsa</div></pre></td></tr></table></figure>
+</li>
+<li><p>访问php网站报500错误时显示错误显示</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">ini_set(&quot;display_errors&quot;, &quot;On&quot;);</div><div class="line">error_reporting(E_ALL | E_STRICT);</div></pre></td></tr></table></figure>
+</li>
+<li><p>重启nginx时报nginx.pid不存在的解决办法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo nginx -c /usr/local/etc/nginx/nginx.conf</div></pre></td></tr></table></figure>
+</li>
+<li><p>mac 强行关掉php</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">sudo pkill -INT -o php-fpm</div><div class="line">//重启php</div><div class="line">sudo php-fpm</div></pre></td></tr></table></figure>
+</li>
+<li><p>mac brew安装的php可以使用这个开启</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">brew services start homebrew/php/php56</div></pre></td></tr></table></figure>
+</li>
+<li><p>mac brew安装的php可以使用这个重启</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">brew services reload homebrew/php/php56</div></pre></td></tr></table></figure>
+</li>
+<li><p>Linux 添加用户</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">useradd 用户名</div></pre></td></tr></table></figure>
+</li>
+<li><p>Linux 用户密码修改</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">passwd 用户名</div></pre></td></tr></table></figure>
+</li>
+<li><p>开启redis服务</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">redis-server</div></pre></td></tr></table></figure>
+</li>
+<li><p>进入redis客户端</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">redis-cli</div><div class="line"></div><div class="line">redis-cli -h &#123;host&#125; -p &#123;port&#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>安装locate查询文件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">apt install locate</div><div class="line">updatedb</div><div class="line">locate nginx</div></pre></td></tr></table></figure></p>
 
       
 
@@ -184,7 +243,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">GIT</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">日常</a>
         		</li>
       		
 		</ul>
@@ -240,7 +303,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=http://heyforyou.com/2017/09/05/undefined.html" alt="微信分享二维码">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://heyforyou.com/2017/08/27/20170827020351.html" alt="微信分享二维码">
     </div>
 </div>
 
@@ -254,18 +317,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2017/09/14/undefined.html" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2017/08/27/20170827091950.html" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          SSH链接报WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!的解决方法
+          阿里云Ubuntu安装Composer和中国镜像
         
       </div>
     </a>
   
   
-    <a href="/2017/08/27/undefined.html" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">阿里云Ubuntu安装Composer和中国镜像</div>
+    <a href="/2017/08/27/20170827012851.html" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">阿里云Ubuntu安装LNMP环境之PHP7</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -470,15 +533,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">记生活</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">栈</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">记生活</a>
               </li>
              
               <li class="article-tag-list-item">

@@ -6,19 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://heyforyou.com">
-  <title>Linux学习笔记 | LHC生活技术宅</title>
+  <title>初次见面，请多关照 | LHC生活技术宅</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="cat － 连接文件 sort － 排序文本行 uniq － 报道或省略重复行 grep － 打印匹配行 wc － 打印文件中换行符，字，和字节个数 head － 输出文件第一部分 tail - 输出文件最后一部分 tee - 从标准输入读取数据，并同时写到标准输出和文件">
-<meta name="keywords" content="Linux">
+  <meta name="description" content="1$ hello world">
+<meta name="keywords" content="php,linux,html,mysql,js,javascript">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Linux学习笔记">
-<meta property="og:url" content="http://heyforyou.com/2017/10/22/undefined.html">
+<meta property="og:title" content="初次见面，请多关照">
+<meta property="og:url" content="http://heyforyou.com/2017/08/26/20170826005328.html">
 <meta property="og:site_name" content="LHC生活技术宅">
-<meta property="og:description" content="cat － 连接文件 sort － 排序文本行 uniq － 报道或省略重复行 grep － 打印匹配行 wc － 打印文件中换行符，字，和字节个数 head － 输出文件第一部分 tail - 输出文件最后一部分 tee - 从标准输入读取数据，并同时写到标准输出和文件">
-<meta property="og:updated_time" content="2018-02-26T03:44:41.384Z">
+<meta property="og:description" content="1$ hello world">
+<meta property="og:updated_time" content="2018-02-26T03:44:41.387Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Linux学习笔记">
-<meta name="twitter:description" content="cat － 连接文件 sort － 排序文本行 uniq － 报道或省略重复行 grep － 打印匹配行 wc － 打印文件中换行符，字，和字节个数 head － 输出文件第一部分 tail - 输出文件最后一部分 tee - 从标准输入读取数据，并同时写到标准输出和文件">
+<meta name="twitter:title" content="初次见面，请多关照">
+<meta name="twitter:description" content="1$ hello world">
   
     <link rel="alternative" href="/atom.xml" title="LHC生活技术宅" type="application/atom+xml">
   
@@ -150,127 +150,27 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Linux学习笔记" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-初次见面，请多关照" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Linux学习笔记
+      初次见面，请多关照
     </h1>
   
 
         
-        <a href="/2017/10/22/undefined.html" class="archive-article-date">
-  	<time datetime="2017-10-22T02:40:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-22</time>
+        <a href="/2017/08/26/20170826005328.html" class="archive-article-date">
+  	<time datetime="2017-08-25T16:53:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-26</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>cat － 连接文件</p>
-<p>sort － 排序文本行</p>
-<p>uniq － 报道或省略重复行</p>
-<p>grep － 打印匹配行</p>
-<p>wc － 打印文件中换行符，字，和字节个数</p>
-<p>head － 输出文件第一部分</p>
-<p>tail - 输出文件最后一部分</p>
-<p>tee - 从标准输入读取数据，并同时写到标准输出和文件<br><a id="more"></a></p>
-<h3 id="重定向标准输出"><a href="#重定向标准输出" class="headerlink" title="重定向标准输出"></a>重定向标准输出</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ ls -l /usr/bin &gt;&gt; ls-output.txt</div></pre></td></tr></table></figure>
-<p>使用”&gt;&gt;“操作符，将导致输出结果添加到文件内容之后。如果文件不存在，文件会 被创建，就如使用了”&gt;”操作符。</p>
-<h3 id="重定向标准错误"><a href="#重定向标准错误" class="headerlink" title="重定向标准错误"></a>重定向标准错误</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ ls -l /bin/usr 2&gt; ls-error.txt</div></pre></td></tr></table></figure>
-<h3 id="重定向标准输出和错误到同一个文件"><a href="#重定向标准输出和错误到同一个文件" class="headerlink" title="重定向标准输出和错误到同一个文件"></a>重定向标准输出和错误到同一个文件</h3><ul>
-<li>第一种方法<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ ls -l /bin/usr &gt; ls-output.txt 2&gt;&amp;1</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>使用这种方法，我们完成两个重定向。首先重定向标准输出到文件 ls-output.txt，然后 重定向文件描述符2（标准错误）到文件描述符1（标准输出）使用表示法2&gt;&amp;1。<br><code>注意</code>：重定向的顺序安排非常重要。标准错误的重定向必须总是出现在标准输出 重定向之后，要不然它不起作用。</p>
-<ul>
-<li>第二种方法<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ ls -l /bin/usr &amp;&gt; ls-output.txt</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<h3 id="处理不需要的输出"><a href="#处理不需要的输出" class="headerlink" title="处理不需要的输出"></a>处理不需要的输出</h3><p>有时候“沉默是金”，我们不想要一个命令的输出结果，只想把它们扔掉。这种情况 尤其适用于错误和状态信息。系统为我们提供了解决问题的方法，通过重定向输出结果 到一个特殊的叫做”/dev/null”的文件。这个文件是系统设备，叫做位存储桶，它可以 接受输入，并且对输入不做任何处理。为了隐瞒命令错误信息，我们这样做：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ ls -l /bin/usr 2&gt; /dev/null</div></pre></td></tr></table></figure></p>
-<h3 id="管道线"><a href="#管道线" class="headerlink" title="管道线"></a>管道线</h3><p>命令可以从标准输入读取数据，然后再把数据输送到标准输出，命令的这种能力被 一个 shell 特性所利用，这个特性叫做管道线。使用管道操作符”|”（竖杠），一个命令的 标准输出可以管道到另一个命令的标准输入：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ command1 | command2</div></pre></td></tr></table></figure>
-<h3 id="通过八进制表示法"><a href="#通过八进制表示法" class="headerlink" title="通过八进制表示法"></a>通过八进制表示法</h3><p>我们使用八进制数字来设置所期望的权限模式。因为每个八进制数字代表了 3个二进制数字，这种对应关系，正好映射到用来存储文件模式所使用的方案上。下表展示了 我们所要表达的意思：</p>
-<table>
-<thead>
-<tr>
-<th>Octal</th>
-<th>Binary</th>
-<th>File Mode</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>  0</td>
-<td>000</td>
-<td>—</td>
-</tr>
-<tr>
-<td>  1</td>
-<td>001</td>
-<td>–x</td>
-</tr>
-<tr>
-<td>  2</td>
-<td>010</td>
-<td>-w-</td>
-</tr>
-<tr>
-<td>  3</td>
-<td>011</td>
-<td>-wx</td>
-</tr>
-<tr>
-<td>  4</td>
-<td>100</td>
-<td>r–</td>
-</tr>
-<tr>
-<td>  5</td>
-<td>101</td>
-<td>r-x</td>
-</tr>
-<tr>
-<td>  6</td>
-<td>110</td>
-<td>rw-</td>
-</tr>
-<tr>
-<td>  7</td>
-<td>111</td>
-<td>rwx</td>
-</tr>
-</tbody>
-</table>
-<h3 id="登录-shell-会话的启动文件"><a href="#登录-shell-会话的启动文件" class="headerlink" title="登录 shell 会话的启动文件"></a>登录 shell 会话的启动文件</h3><table>
-<thead>
-<tr>
-<th>文件</th>
-<th>内容</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>/etc/profile</td>
-<td>应用于所有用户的全局配置脚本。</td>
-</tr>
-<tr>
-<td>~/.bash_profile</td>
-<td>用户私人的启动文件。可以用来扩展或重写全局配置脚本中的设置。</td>
-</tr>
-<tr>
-<td>~/.bash_login</td>
-<td>如果文件 ~/.bash_profile 没有找到，bash 会尝试读取这个脚本。</td>
-</tr>
-<tr>
-<td>~/.profile</td>
-<td>如果文件 ~/.bash_profile 或文件 ~/.bash_login 都没有找到，bash 会试图读取这个文件。这是基于Debian 发行版的默认设置，比方说 Ubuntu。</td>
-</tr>
-</tbody>
-</table>
+        <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hello world</div></pre></td></tr></table></figure>
 
       
 
@@ -279,17 +179,6 @@
     <div class="article-info article-info-index">
       
       
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Linux</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
       
 
       
@@ -340,7 +229,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=http://heyforyou.com/2017/10/22/undefined.html" alt="微信分享二维码">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://heyforyou.com/2017/08/26/20170826005328.html" alt="微信分享二维码">
     </div>
 </div>
 
@@ -354,20 +243,15 @@
   
 <nav id="article-nav">
   
-    <a href="/2017/10/27/undefined.html" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2017/08/26/20170826095047.html" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          Nginx编译安装
+          git避免提交本地配置文件-来自同事的分享
         
       </div>
     </a>
   
-  
-    <a href="/2017/10/19/undefined.html" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Nginx学习笔记</div>
-      <i class="icon-circle-right"></i>
-    </a>
   
 </nav>
 
@@ -570,15 +454,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">记生活</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">栈</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">记生活</a>
               </li>
              
               <li class="article-tag-list-item">

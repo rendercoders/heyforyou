@@ -6,18 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://heyforyou.com">
-  <title>Tag: redis | LHC生活技术宅</title>
+  <title>《转载》redis命令总结 | LHC生活技术宅</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="我的孤独是一座花园。">
-<meta name="keywords" content="php,linux,html,mysql,js,javascript">
-<meta property="og:type" content="website">
-<meta property="og:title" content="LHC生活技术宅">
-<meta property="og:url" content="http://heyforyou.com/tags/redis/index.html">
+  <meta name="description" content="连接操作相关的命令默认直接连接  远程连接-h 192.168.1.20 -p 6379ping 测试连接是否存活如果正常会返回pongecho 打印select 切换到指定的数据库，数据库索引号 index 用数字值指定，以 0 作为起始索引值quit 关闭连接（connection）auth 简单密码认证">
+<meta name="keywords" content="redis">
+<meta property="og:type" content="article">
+<meta property="og:title" content="《转载》redis命令总结">
+<meta property="og:url" content="http://heyforyou.com/2017/10/18/20171018231022.html">
 <meta property="og:site_name" content="LHC生活技术宅">
-<meta property="og:description" content="我的孤独是一座花园。">
+<meta property="og:description" content="连接操作相关的命令默认直接连接  远程连接-h 192.168.1.20 -p 6379ping 测试连接是否存活如果正常会返回pongecho 打印select 切换到指定的数据库，数据库索引号 index 用数字值指定，以 0 作为起始索引值quit 关闭连接（connection）auth 简单密码认证">
+<meta property="og:updated_time" content="2018-02-26T03:44:41.386Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="LHC生活技术宅">
-<meta name="twitter:description" content="我的孤独是一座花园。">
+<meta name="twitter:title" content="《转载》redis命令总结">
+<meta name="twitter:description" content="连接操作相关的命令默认直接连接  远程连接-h 192.168.1.20 -p 6379ping 测试连接是否存活如果正常会返回pongecho 打印select 切换到指定的数据库，数据库索引号 index 用数字值指定，以 0 作为起始索引值quit 关闭连接（connection）auth 简单密码认证">
   
     <link rel="alternative" href="/atom.xml" title="LHC生活技术宅" type="application/atom+xml">
   
@@ -149,36 +150,43 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-《转载》redis命令总结" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/10/18/20171018231022.html" class="archive-article-date">
-  	<time datetime="2017-10-18T15:10:22.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-18</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/10/18/20171018231022.html">《转载》redis命令总结</a>
+    <h1 class="article-title" itemprop="name">
+      《转载》redis命令总结
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2017/10/18/20171018231022.html" class="archive-article-date">
+  	<time datetime="2017-10-18T15:10:22.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-18</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="连接操作相关的命令"><a href="#连接操作相关的命令" class="headerlink" title="连接操作相关的命令"></a>连接操作相关的命令</h3><p>默认直接连接  远程连接-h 192.168.1.20 -p 6379<br><code>ping</code> 测试连接是否存活如果正常会返回pong<br><code>echo</code> 打印<br><code>select</code> 切换到指定的数据库，数据库索引号 index 用数字值指定，以 0 作为起始索引值<br><code>quit</code> 关闭连接（connection）<br><code>auth</code> 简单密码认证<br><a id="more"></a></p>
+<h3 id="服务端相关命令"><a href="#服务端相关命令" class="headerlink" title="服务端相关命令"></a>服务端相关命令</h3><p><code>time</code> 返回当前服务器时间<br><code>client list</code> 返回所有连接到服务器的客户端信息和统计数据  参见<a href="http://redisdoc.com/server/client_list.html" target="_blank" rel="noopener">http://redisdoc.com/server/client_list.html</a><br><code>client kill ip:port</code> 关闭地址为 ip:port 的客户端<br><code>save</code> 将数据同步保存到磁盘<br><code>bgsave</code> 将数据异步保存到磁盘<br><code>lastsave</code> 返回上次成功将数据保存到磁盘的Unix时戳<br><code>shundown</code> 将数据同步保存到磁盘，然后关闭服务<br><code>info</code> 提供服务器的信息和统计<br><code>config resetstat</code> 重置info命令中的某些统计数据<br><code>config get</code> 获取配置文件信息<br><code>config set</code> 动态地调整 Redis 服务器的配置(configuration)而无须重启，可以修改的配置参数可以使用命令 CONFIG GET * 来列出<br><code>config rewrite</code> Redis 服务器时所指定的 redis.conf 文件进行改写<br><code>monitor</code> 实时转储收到的请求<br><code>slaveof</code> 改变复制策略设置</p>
+<h3 id="发布订阅相关命令"><a href="#发布订阅相关命令" class="headerlink" title="发布订阅相关命令"></a>发布订阅相关命令</h3><p><code>psubscribe</code> 订阅一个或多个符合给定模式的频道 例如psubscribe news.<em> tweet.</em><br><code>publish</code> 将信息 message 发送到指定的频道 channel 例如publish msg “good morning”<br><code>pubsub channels</code> 列出当前的活跃频道 例如PUBSUB CHANNELS news.i*<br><code>pubsub numsub</code> 返回给定频道的订阅者数量 例如PUBSUB NUMSUB news.it news.internet news.sport news.music<br><code>pubsub numpat</code> 返回客户端订阅的所有模式的数量总和<br><code>punsubscribe</code> 指示客户端退订所有给定模式。<br><code>subscribe</code> 订阅给定的一个或多个频道的信息。例如 subscribe msg chat_room<br><code>unsubscribe</code> 指示客户端退订给定的频道。</p>
+<h3 id="对KEY操作的命令"><a href="#对KEY操作的命令" class="headerlink" title="对KEY操作的命令"></a>对KEY操作的命令</h3><p><code>exists(key)</code> 确认一个key是否存在<br><code>del(key)</code> 删除一个key<br><code>type(key)</code> 返回值的类型<br><code>keys(pattern)</code> 返回满足给定pattern的所有key<br><code>randomkey</code> 随机返回key空间的一个<br><code>keyrename(oldname, newname)</code> 重命名key<br><code>dbsize</code> 返回当前数据库中key的数目<br><code>expire</code> 设定一个key的活动时间（s）<br><code>ttl</code> 获得一个key的活动时间<br><code>move(key, dbindex)</code> 移动当前数据库中的key到dbindex数据库<br><code>flushdb</code> 删除当前选择数据库中的所有key<br><code>flushall</code> 删除所有数据库中的所有key</p>
+<h3 id="对String操作的命令"><a href="#对String操作的命令" class="headerlink" title="对String操作的命令"></a>对String操作的命令</h3><p><code>set(key, value)</code> 给数据库中名称为key的string赋予值value<br><code>get(key)</code> 返回数据库中名称为key的string的value<br><code>getset(key, value)</code> 给名称为key的string赋予上一次的value<br><code>mget(key1, key2,…, key N)</code> 返回库中多个string的value<br><code>setnx(key, value)</code> 添加string，名称为key，值为value<br><code>setex(key, time, value)</code> 向库中添加string，设定过期时间time<br><code>mset(key N, value N)</code> 批量设置多个string的值<br><code>msetnx(key N, value N)</code> 如果所有名称为key i的string都不存在<br><code>incr(key)</code> 名称为key的string增1操作<br><code>incrby(key, integer)</code> 名称为key的string增加integer<br><code>decr(key)</code> 名称为key的string减1操作<br><code>decrby(key, integer)</code> 名称为key的string减少integer<br><code>append(key, value)</code> 名称为key的string的值附加value<br><code>substr(key, start, end)</code> 返回名称为key的string的value的子串</p>
+<h3 id="对List操作的命令"><a href="#对List操作的命令" class="headerlink" title="对List操作的命令"></a>对List操作的命令</h3><p><code>rpush(key, value)</code> 在名称为key的list尾添加一个值为value的元素<br><code>lpush(key, value)</code> 在名称为key的list头添加一个值为value的 元素<br><code>llen(key)</code> 返回名称为key的list的长度<br><code>lrange(key, start, end)</code> 返回名称为key的list中start至end之间的元素<br><code>ltrim(key, start, end)</code> 截取名称为key的list<br><code>lindex(key, index)</code> 返回名称为key的list中index位置的元素<br><code>lset(key, index, value)</code> 给名称为key的list中index位置的元素赋值<br><code>lrem(key, count, value)</code> 删除count个key的list中值为value的元素<br><code>lpop(key)</code> 返回并删除名称为key的list中的首元素<br><code>rpop(key)</code> 返回并删除名称为key的list中的尾元素<br><code>blpop(key1, key2,… key N, timeout)</code> lpop命令的block版本。<br><code>brpop(key1, key2,… key N, timeout)</code> rpop的block版本。<br><code>rpoplpush(srckey, dstkey)</code> 返回并删除名称为srckey的list的尾元素，并将该元素添加到名称为dstkey的list的头部</p>
+<h3 id="对Set操作的命令"><a href="#对Set操作的命令" class="headerlink" title="对Set操作的命令"></a>对Set操作的命令</h3><p><code>sadd(key, member)</code> 向名称为key的set中添加元素member<br><code>srem(key, member)</code> 删除名称为key的set中的元素member<br><code>spop(key)</code> 随机返回并删除名称为key的set中一个元素<br><code>smove(srckey, dstkey, member)</code> 移到集合元素<br><code>scard(key)</code> 返回名称为key的set的基数<br><code>sismember(key, member)</code> member是否是名称为key的set的元素<br><code>sinter(key1, key2,…key N)</code> 求交集<br><code>sinterstore(dstkey, (keys))</code> 求交集并将交集保存到dstkey的集合<br><code>sunion(key1, (keys))</code> 求并集<br><code>sunionstore(dstkey, (keys))</code> 求并集并将并集保存到dstkey的集合<br><code>sdiff(key1, (keys))</code> 求差集<br><code>sdiffstore(dstkey, (keys))</code> 求差集并将差集保存到dstkey的集合<br><code>smembers(key)</code> 返回名称为key的set的所有元素<br><code>srandmember(key)</code> 随机返回名称为key的set的一个元素</p>
+<h3 id="对Hash操作的命令"><a href="#对Hash操作的命令" class="headerlink" title="对Hash操作的命令"></a>对Hash操作的命令</h3><p><code>hset(key, field, value)</code> 向名称为key的hash中添加元素field<br><code>hget(key, field)</code> 返回名称为key的hash中field对应的value<br><code>hmget(key, (fields))</code> 返回名称为key的hash中field i对应的value<br><code>hmset(key, (fields))</code> 向名称为key的hash中添加元素field<br><code>hincrby(key, field, integer)</code> 将名称为key的hash中field的value增加integer<br><code>hexists(key, field)</code> 名称为key的hash中是否存在键为field的域<br><code>hdel(key, field)</code> 删除名称为key的hash中键为field的域<br><code>hlen(key)</code> 返回名称为key的hash中元素个数<br><code>hkeys(key)</code> 返回名称为key的hash中所有键<br><code>hvals(key)</code> 返回名称为key的hash中所有键对应的value<br><code>hgetall(key)</code> 返回名称为key的hash中所有的键（field）及其对应的value</p>
+<p>转载自 <a href="http://www.cnblogs.com/silent2012/p/5368925.html" target="_blank" rel="noopener">http://www.cnblogs.com/silent2012/p/5368925.html</a></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -190,19 +198,113 @@
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://heyforyou.com/2017/10/18/20171018231022.html" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/2017/10/19/20171019142316.html" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          Nginx学习笔记
+        
+      </div>
+    </a>
   
   
-    </div></section>
+    <a href="/2017/09/25/20170925232314.html" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">如何使用PHP排序key为字母+数字的数组</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -225,9 +327,9 @@
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: true,
 		toc_hide_index: true,
