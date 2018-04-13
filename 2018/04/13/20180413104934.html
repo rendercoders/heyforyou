@@ -6,18 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://heyforyou.com">
-  <title>Tag: 栈 | LHC生活技术宅</title>
+  <title>PHP 5.0 到 7.1 常用语法糖(转) | LHC生活技术宅</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="我的孤独是一座花园。">
-<meta name="keywords" content="php,linux,html,mysql,js,javascript">
-<meta property="og:type" content="website">
-<meta property="og:title" content="LHC生活技术宅">
-<meta property="og:url" content="http://heyforyou.com/tags/栈/index.html">
+  <meta name="description" content="PHP更新了这久了，一只也没有来巩固一下基本语法。最近抽了点时间梳理了一下php版本的差异。自己记录一下，同时也分享出来 大家一起学习探讨一下 类型Boolean 空对象在 4.0 以后都是为 true  String string 的内部结构类似 array, 可以像 Python 一下使用下标访问字符串123$str = &amp;apos;012345&amp;apos;;echo $str[1];  //">
+<meta name="keywords" content="PHP">
+<meta property="og:type" content="article">
+<meta property="og:title" content="PHP 5.0 到 7.1 常用语法糖(转)">
+<meta property="og:url" content="http://heyforyou.com/2018/04/13/20180413104934.html">
 <meta property="og:site_name" content="LHC生活技术宅">
-<meta property="og:description" content="我的孤独是一座花园。">
+<meta property="og:description" content="PHP更新了这久了，一只也没有来巩固一下基本语法。最近抽了点时间梳理了一下php版本的差异。自己记录一下，同时也分享出来 大家一起学习探讨一下 类型Boolean 空对象在 4.0 以后都是为 true  String string 的内部结构类似 array, 可以像 Python 一下使用下标访问字符串123$str = &amp;apos;012345&amp;apos;;echo $str[1];  //">
+<meta property="og:updated_time" content="2018-04-13T03:23:41.199Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="LHC生活技术宅">
-<meta name="twitter:description" content="我的孤独是一座花园。">
+<meta name="twitter:title" content="PHP 5.0 到 7.1 常用语法糖(转)">
+<meta name="twitter:description" content="PHP更新了这久了，一只也没有来巩固一下基本语法。最近抽了点时间梳理了一下php版本的差异。自己记录一下，同时也分享出来 大家一起学习探讨一下 类型Boolean 空对象在 4.0 以后都是为 true  String string 的内部结构类似 array, 可以像 Python 一下使用下标访问字符串123$str = &amp;apos;012345&amp;apos;;echo $str[1];  //">
   
     <link rel="alternative" href="/atom.xml" title="LHC生活技术宅" type="application/atom+xml">
   
@@ -149,64 +150,239 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-PHP-5-0-到-7-1-常用语法糖-转" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/09/24/20170924134245.html" class="archive-article-date">
-  	<time datetime="2017-09-24T05:42:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-24</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/09/24/20170924134245.html">简单用PHP理解栈的PUSH和POP</a>
+    <h1 class="article-title" itemprop="name">
+      PHP 5.0 到 7.1 常用语法糖(转)
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2018/04/13/20180413104934.html" class="archive-article-date">
+  	<time datetime="2018-04-13T02:49:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-04-13</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>PHP更新了这久了，一只也没有来巩固一下基本语法。最近抽了点时间梳理了一下php版本的差异。自己记录一下，同时也分享出来 大家一起学习探讨一下</p>
+<h2 id="类型"><a href="#类型" class="headerlink" title="类型"></a>类型</h2><h6 id="Boolean"><a href="#Boolean" class="headerlink" title="Boolean"></a>Boolean</h6><ul>
+<li>空对象在 <code>4.0</code> 以后都是为 <code>true</code></li>
+</ul>
+<h6 id="String"><a href="#String" class="headerlink" title="String"></a>String</h6><ul>
+<li><code>string</code> 的内部结构类似 <code>array</code>, 可以像 <code>Python</code> 一下使用下标访问字符串<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$str = &apos;012345&apos;;</div><div class="line">echo $str[1];  //1</div><div class="line">echo $str&#123;2&#125;;  //2</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h6 id="Array"><a href="#Array" class="headerlink" title="Array"></a>Array</h6><ul>
+<li><code>5.4</code> 以后可以像 <code>JS</code> 一样定义数组<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$arr = [&apos;one&apos;, &apos;two&apos;, &apos;three&apos;]; //感觉方便了很多</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<a id="more"></a>
+<h2 id="全局变量"><a href="#全局变量" class="headerlink" title="全局变量"></a>全局变量</h2><h6 id="SERVER"><a href="#SERVER" class="headerlink" title="$_SERVER"></a>$_SERVER</h6><ul>
+<li><code>SERVER_ADDR</code> IP 地址 <code>127.0.0.1</code></li>
+<li><code>SERVER_NAME</code> 主机名 <code>localhost</code></li>
+<li><code>SERVER_SOFTWARE</code> 服务器类型 <code>nginx</code></li>
+<li><code>REMOTE_ADDR</code> 客户端 IP <code>127.0.0.1</code></li>
+</ul>
+<h6 id="常量"><a href="#常量" class="headerlink" title="常量"></a>常量</h6><ul>
+<li><code>5.3</code> 之后可以使用 <code>const</code> 来定义常量<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">const DEBUG = true;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h6 id="运算符"><a href="#运算符" class="headerlink" title="运算符"></a>运算符</h6><ul>
+<li><p><code>&lt;=&gt;</code> 比较运算符，<code>7.0</code> 之后支持</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">echo  $a &lt;=&gt; $b;</div><div class="line">/*</div><div class="line">当 $a &lt; $b 时， 表达式返回 -1</div><div class="line">当 $a = $b 时， 表达是返回 0</div><div class="line">当 $a &gt; $b 时， 表达式返回  1</div><div class="line">*/</div></pre></td></tr></table></figure>
+</li>
+<li><p><code>??</code> 空合并运算符 <code>PHP7</code> 特性。(如果是未定义的变量不会抛 <code>notice</code> 错误)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$name = $_POST[&apos;name&apos;] ?? &apos;&apos;;  //如果前面的值不为 null ，则返回本身，否则返回后面的值</div></pre></td></tr></table></figure>
+</li>
+<li><p>三元运算符 <code>?:</code> <code>5.3</code> 以后可以使用(如果是未定义的变量会抛 <code>notice</code> 错误)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$name = $_POST[&apos;name&apos;] ?: &apos;&apos;; ////如果前面的值不为 null ，则返回本身，否则返回后面的值</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h6 id="流程控制"><a href="#流程控制" class="headerlink" title="流程控制"></a>流程控制</h6><ul>
+<li><code>goto</code>  <code>5.3</code> 以上有效<blockquote>
+<p>操作符可以用来跳转到程序中的另一位置。该目标位置可以用目标名称加上冒号来标记，而跳转指令是 <code>goto</code> 之后接上目标位置的标记。<code>PHP</code> 中的 <code>goto</code> 有一定限制，目标位置只能位于同一个文件和作用域，也就是说无法跳出一个函数或类方法，也无法跳入到另一个函数。也无法跳入到任何循环或者 <code>switch</code> 结构中。可以跳出循环或者 <code>switch</code> ，通常的用法是用 <code>goto</code> 代替多层的 <code>break</code> 。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">goto a;</div><div class="line">echo &apos;Foo&apos;;</div><div class="line"></div><div class="line">a:</div><div class="line">echo &apos;Bar&apos;;</div><div class="line"></div><div class="line">//输出 Bar</div></pre></td></tr></table></figure>
+</blockquote>
+</li>
+</ul>
+<h6 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h6><ul>
+<li><p>变长参数 <code>...</code> ， <code>5.6</code> 以后可用</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">function dosum(...$arr)&#123;</div><div class="line">    $sum = 0;</div><div class="line">    foreach($arr as $v)&#123;</div><div class="line">        $sum += $v;</div><div class="line">    &#125;</div><div class="line">    return $sum;</div><div class="line">&#125;</div><div class="line"></div><div class="line">$arr = [1, 2, 3, 4, 5];</div><div class="line">echo dosum(...$arr);   // 输出15</div><div class="line">echo dosum(1,2,3,4,5,6); //输出21</div><div class="line"></div><div class="line">//TODO</div><div class="line">/**</div><div class="line">这个语法，我最近总在用。感觉还比较简单。不过要注意服务器版本。。最近入了一个坑。</div><div class="line">*/</div></pre></td></tr></table></figure>
+</li>
+<li><p>匿名函数（Anonymous functions）<code>5.3</code></p>
+<blockquote>
+<p>也叫闭包函数，在JS中很常见。为了防止污染全局作用域。5.3 以后PHP也支持了这种写法</p>
+</blockquote>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$test = function($name=&apos;Li&apos;)&#123;</div><div class="line">    echo &apos;My name is &apos;.$name;</div><div class="line">&#125;;</div><div class="line">$test();</div></pre></td></tr></table></figure>
+<blockquote>
+<p>如果想要从父作用域中继承变量怎么办</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">//这里定义一个默认的输出名字的方式</div><div class="line">$tpl = &apos;My name is &apos;;</div><div class="line"></div><div class="line">//使用 use() 来引用父级的变量，最后输出结果与上边一致 </div><div class="line">$test = function($name=&apos;Li&apos;) use($tpl) &#123;</div><div class="line">    echo $tpl.$name;</div><div class="line">&#125;;</div><div class="line">$test();</div></pre></td></tr></table></figure>
+<blockquote>
+<p>需要注意的是，闭包函数的父作用域，是定义它的作用域，不是调用的作用域</p>
+</blockquote>
+<h6 id="类和对象"><a href="#类和对象" class="headerlink" title="类和对象"></a>类和对象</h6><ul>
+<li><p><code>::class</code> 类的静态方法，用于获取类的完全限定名称，（包含命名空间）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">namespace Foo&#123;</div><div class="line">    class test&#123;</div><div class="line"></div><div class="line">    &#125;</div><div class="line">    echo test::class; // 输出 FOO\test, 在使用命名空间的情况非常有用</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p><code>5.4</code> 新增加的一个多继承实现方式 <code>trait</code> 。下面总结了一下基本概念</p>
+</li>
+</ul>
+<blockquote>
+<ul>
+<li><code>trait</code> 和 <code>class</code> 是相似的概念，但不能被实例化</li>
+<li>一个类可以使用多个 <code>trait</code> ，优先级是 <code>class</code> &gt; <code>trait</code> &gt; <code>父类继承的方法</code> </li>
+<li>使用 <code>insteadof</code> 来解决 <code>tarit</code> 冲突 </li>
+<li>使用 <code>as</code> ，来修改方法的访问控制 </li>
+<li>在 <code>trait</code> 中也可以使用 <code>tarit</code> 。和在 <code>class</code> 中用法一致</li>
+</ul>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line">trait A &#123;</div><div class="line">    public function say()&#123;</div><div class="line">        echo &apos;trait  A&apos;;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">trait B &#123;</div><div class="line">    public function say()&#123;</div><div class="line">        echo &apos;trait B&apos;;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    public function walk()&#123;</div><div class="line">        echo &apos;walk B&apos;;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">class Person &#123;</div><div class="line">    use A, B&#123;</div><div class="line">        B :: say insteadof A; // 使用B的say方法代替了A的say方法</div><div class="line">        walk as protected;    // 将walk 设置为受保护的</div><div class="line">    &#125;</div><div class="line"></div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line">$obj = new Person;</div><div class="line">$obj-&gt;say();  // echo trait A;</div><div class="line">$obj-&gt;walk(); // 提示不能访问一个受保护的方法</div></pre></td></tr></table></figure>
+<blockquote>
+<ul>
+<li>在 <code>trait</code> 中使用， 属性、静态属性、静态方法、抽象类都是被允许的。</li>
+</ul>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">trait Test &#123;</div><div class="line">    public static $obj;</div><div class="line">    public $name = 1;</div><div class="line">    static function createObj()&#123;</div><div class="line">        return empty(self::$obj) ? new self : self::$obj;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">class son &#123;</div><div class="line">    use Test;</div><div class="line">&#125;</div><div class="line"></div><div class="line">$obj = son::createObj();</div><div class="line">echo $obj-&gt;name;  // echo 1</div><div class="line">echo $obj === $obj1 ? 0 : 1; // echo 1</div></pre></td></tr></table></figure>
+<ul>
+<li>5.3 类的后期静态绑定 <blockquote>
+<p>官方的解释是：<br>该功能从语言内部角度考虑被命名为 “后期静态绑定” 。“后期绑定” 的意思是说，<code>static::</code>不再被解析为定义当前方法所在的类，而是在实际运行时计算的。也可以称之为 “静态绑定” ，因为它可以用于（但不限于）静态方法的调用<br>乍一看，好像什么也没看懂。看看具体的代码吧。 </p>
+</blockquote>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div></pre></td><td class="code"><pre><div class="line">class A &#123;</div><div class="line">    public static function who() &#123;</div><div class="line">        echo __CLASS__;</div><div class="line">    &#125;</div><div class="line">    public static function test() &#123;</div><div class="line">        self::who();</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">class B extends A &#123;</div><div class="line">    public static function who() &#123;</div><div class="line">        echo __CLASS__;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">B::test(); // echo A;</div><div class="line"></div><div class="line">// 上面是一个正常的调用， 输出了 A</div><div class="line"></div><div class="line">// 当我们把 class A 的 test 方法修改一下。 将 self 改成 static 后</div><div class="line"></div><div class="line">class A &#123;</div><div class="line">    public static function who() &#123;</div><div class="line">        echo __CLASS__;</div><div class="line">    &#125;</div><div class="line">    public static function test() &#123;</div><div class="line">        static::who();</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">class B extends A &#123;</div><div class="line">    public static function who() &#123;</div><div class="line">        echo __CLASS__;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">B::test(); // echo B;</div></pre></td></tr></table></figure>
+<blockquote>
+<p>总结：<code>PHP5.3</code> 新增加了一类关键字，<code>static</code> 可以在调用函数的方法。用这个关键字，来实现了后期静态绑定。</p>
+</blockquote>
+<h6 id="异常处理"><a href="#异常处理" class="headerlink" title="异常处理"></a>异常处理</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">try&#123;</div><div class="line">    throw new Execption(&apos;抛出异常&apos;);</div><div class="line">&#125; catch (Execption $e)&#123;</div><div class="line">    //获取异常</div><div class="line">    $error = $e-&gt;getMessage();</div><div class="line">&#125;</div><div class="line">echo $error;  //抛出异常</div></pre></td></tr></table></figure>
+<blockquote>
+<p>转自 <a href="https://blog.csdn.net/longwenxia1234/article/details/75244427" target="_blank" rel="noopener">PHP 5.0 到 7.1 常用语法糖（个人整理）</a></p>
+</blockquote>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">数据结构</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">栈</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">PHP</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://heyforyou.com/2018/04/13/20180413104934.html" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/2018/01/26/20180126151710.html" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">由一个 Linux 命令引发的英语语法思考</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -229,9 +405,9 @@
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: true,
 		toc_hide_index: true,
