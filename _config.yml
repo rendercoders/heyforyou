@@ -86,6 +86,13 @@ deploy:
 baidusitemap:
   path: baidusitemap.xml
 
+# add post views
+leancloud_visitors:
+  enable: true
+  app_id: SzTWxku7QlOuCF6G28in2Pnx-gzGzoHsz
+  app_key: 3ysLKLftEWX8UPieFDwF63IH
+
+
 jsonContent:
   meta: false
   pages: false
