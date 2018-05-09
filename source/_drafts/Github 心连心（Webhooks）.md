@@ -1,5 +1,6 @@
 ---
 title: Github 心连心（Webhooks）
+abbrlink: ea0b3205
 date: 2018-01-25 14:35:05
 tags:
 ---

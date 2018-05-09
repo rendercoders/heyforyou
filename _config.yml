@@ -3,18 +3,21 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: LHC生活技术宅
-subtitle: 我的孤独是一座花园。
-description: 我的孤独是一座花园。
-author: LHC
+title: Hather's Blog
+subtitle: 梦想就是一种让你感到坚持就是幸福的东西。
+description: 技术宅
+author: Hather
 email: 57907830@qq.com
 keywords: "php,linux,html,mysql,js,javascript"
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://heyforyou.com
+url: https://heyforyou.com
 root: /
-permalink: :year/:month/:day/:post_time.html
+permalink: posts/:abbrlink.html
+abbrlink:
+  alg: crc32  # 算法：crc16(default) and crc32
+  rep: hex    # 进制：dec(default) and hex
 permalink_defaults:
 
 # Directory
