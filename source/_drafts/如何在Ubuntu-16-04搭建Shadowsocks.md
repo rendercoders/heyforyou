@@ -20,12 +20,12 @@ $ sudo apt -y install python-pip
 <!-- more -->
 ## 第三步
 ```
-$ pip install --upgrade pip
+$ sudo pip install --upgrade pip
 ```
 
 ## 第四步
 ```
-$ pip install setuptools
+$ sudo pip install setuptools
 ```
 
 ## 第五步安装shadowsocks
