@@ -4,14 +4,35 @@
 
     
   <url>
-    <loc>https://heyforyou.com/posts/a3557ae1.html</loc>
-    <lastmod>2018-05-10T01:17:16.779Z</lastmod>
+    <loc>https://heyforyou.com/posts/79b49d09.html</loc>
+    <lastmod>2018-08-19T16:44:32.120Z</lastmod>
     <data>
         <display>
-        <title>空</title>
+        <title>OA流程数据表设计</title>
+        <pubTime>2018-08-13T09:04:46.000Z</pubTime>
+        
+        <tag>OA</tag>
+         
+        <tag>MYSQL Design</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://heyforyou.com/posts/a3557ae1.html</loc>
+    <lastmod>2018-08-13T08:57:37.062Z</lastmod>
+    <data>
+        <display>
+        <title>OA权限设计</title>
         <pubTime>2018-05-09T15:02:31.000Z</pubTime>
         
-        <tag>心情</tag>
+        <tag>OA</tag>
+         
+        <tag>Permissions</tag>
          
          
            
